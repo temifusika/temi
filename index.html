@@ -4,22 +4,22 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Temi Ogunfusika · Brand, platform and AI automation architect</title>
-<meta name="description" content="Founder of seer. and co-founder of Venuralink, now building Nil. I architect brands, cloud platforms and the AI automations that run them: from name and identity to database security, Google Cloud, SEO and launch.">
+<meta name="description" content="Founder of seer., co-founder of Venuralink, now building Omnistead. I architect brands, cloud platforms and the AI automations that run them: TypeScript, PostgreSQL security, Google Cloud, AWS, WorkOS, Sentry, SEO and launch.">
 <link rel="canonical" href="https://temifusika.com/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Temi Ogunfusika · Brand, platform and AI automation architect">
-<meta property="og:description" content="Three ventures, built end to end: brand architecture, platforms, data security, Google Cloud, SEO and AI automation. Open to AI and IT roles.">
+<meta property="og:description" content="Three ventures and a client platform, built end to end: brand, full-stack product, database security, Google Cloud, AWS, AI automation and SEO.">
 <meta property="og:url" content="https://temifusika.com/">
-<meta property="og:image" content="https://temifusika.com/og-image.png">
+<meta property="og:image" content="https://temifusika.com/og-image.png?v=9">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://temifusika.com/og-image.png">
+<meta name="twitter:image" content="https://temifusika.com/og-image.png?v=9">
 <meta name="theme-color" content="#13161D">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2313161D'/%3E%3Crect x='14' y='36' width='36' height='10' rx='2' fill='%23F2E14C'/%3E%3Ctext x='32' y='33' font-family='Arial' font-weight='700' font-size='22' fill='%23fff' text-anchor='middle'%3ETO%3C/text%3E%3C/svg%3E">
 <link rel="preload" href="assets/fonts/cabinet-800.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/switzer-400.woff2" as="font" type="font/woff2" crossorigin>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Person","name":"Temitope Ogunfusika","alternateName":"Temi Ogunfusika","url":"https://temifusika.com/","email":"mailto:me@temifusika.com","jobTitle":"Founder, brand, platform and AI automation architect","worksFor":[{"@type":"Organization","name":"Seer Consult Ltd (seer.)","url":"https://seerconsult.com"},{"@type":"Organization","name":"Venuralink","url":"https://venuralink.com"}],"alumniOf":{"@type":"CollegeOrUniversity","name":"Cranfield School of Management"},"knowsAbout":["Brand architecture","AI automation","Google Cloud","Vertex AI","PostgreSQL","Row-level security","Next.js","TypeScript","SEO","Structured data","Procurement","Vendor management"],"address":{"@type":"PostalAddress","addressLocality":"Bedford","addressCountry":"GB"}}
+{"@context":"https://schema.org","@type":"Person","name":"Temitope Ogunfusika","alternateName":"Temi Ogunfusika","url":"https://temifusika.com/","email":"mailto:me@temifusika.com","jobTitle":"Founder, brand, platform and AI automation architect","worksFor":[{"@type":"Organization","name":"Seer Consult Ltd (seer.)","url":"https://seerconsult.com"},{"@type":"Organization","name":"Venuralink","url":"https://venuralink.com"},{"@type":"Organization","name":"Omnistead"}],"alumniOf":{"@type":"CollegeOrUniversity","name":"Cranfield School of Management"},"knowsAbout":["Brand architecture","AI automation","TypeScript","Next.js","PostgreSQL","Row-level security","Multi-tenant SaaS","Google Cloud","Vertex AI","AWS","WorkOS","Sentry","Supabase","SEO","Structured data","SECR reporting","Procurement","Vendor management"],"address":{"@type":"PostalAddress","addressLocality":"Bedford","addressCountry":"GB"}}
 </script>
 <style>
 @font-face{font-family:'Cabinet';font-weight:800;font-display:swap;src:url(assets/fonts/cabinet-800.woff2) format('woff2')}
@@ -37,14 +37,15 @@
  --paper:#EDEFF1;--sheet:#F8F9FA;--ink:#13161D;--ink2:#353B47;--mute:#596171;--rule:#CBD0D8;--rule2:#DDE1E6;--hi:#F2E14C;
  --vl-navy:#0A192F;--vl-em:#008751;--vl-em2:#7FD3AE;--vl-cu:#C86D51;--vl-cream:#FDFBF7;
  --se-navy:#0A0F24;--se-el:#3D5AFE;--se-lime:#C6FF3D;
- --nil:#1B1E23;--nil2:#2A2E35;
+ --om:#1D2420;--om2:#2A322D;--om-acc:#D9B46A;--om-paper:#F3F0EA;
+ --fh:#7A2E4B;--fh2:#F3D9DF;
  --disp:'Cabinet',system-ui,sans-serif;--body:'Switzer',system-ui,sans-serif;--mono:'JB',ui-monospace,Menlo,monospace;
  color-scheme:light;
 }
 :root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 *,*::before,*::after{box-sizing:inherit}
 html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 76px)}
-body{margin:0;background:var(--paper);color:var(--ink);font:400 18px/1.6 var(--body);-webkit-font-smoothing:antialiased;
+body{margin:0;background:var(--paper);color:var(--ink);font:400 18px/1.6 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden;
  background-image:repeating-linear-gradient(0deg,transparent 0 31px,rgba(19,22,29,.045) 31px 32px)}
 a{color:inherit;text-underline-offset:4px}
 img{max-width:100%;height:auto;display:block}
@@ -55,17 +56,16 @@ h1{font-weight:800;font-size:clamp(40px,5.1vw,70px);line-height:.98}
 h2{font-weight:800;font-size:clamp(32px,4vw,52px);line-height:1.02}
 h3{font-weight:800;font-size:22px;line-height:1.15}
 p{margin:0}
-.mono{font-family:var(--mono);font-size:13px;letter-spacing:.01em}
 .mark{background:linear-gradient(transparent 58%,var(--hi) 58% 94%,transparent 94%);padding:0 .06em}
 /* header */
 header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(237,239,241,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
 header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:24px}
-.brandname{font:800 19px/1 var(--disp);letter-spacing:-.02em;text-decoration:none;display:flex;align-items:center;gap:10px}
+.brandname{font:800 19px/1 var(--disp);letter-spacing:-.02em;text-decoration:none;display:flex;align-items:center;gap:10px;white-space:nowrap}
 .brandname i{display:inline-block;width:22px;height:8px;background:var(--hi);border-radius:2px}
-nav.main{display:flex;gap:24px}
+nav.main{display:flex;gap:22px}
 nav.main a{text-decoration:none;color:var(--mute);font-weight:500;font-size:16px}
 nav.main a:hover{color:var(--ink)}
-.cta{display:inline-flex;align-items:center;gap:10px;border-radius:999px;padding:13px 22px;font:600 16px/1 var(--body);text-decoration:none;border:2px solid var(--ink);color:var(--ink);background:transparent;cursor:pointer}
+.cta{display:inline-flex;align-items:center;gap:10px;border-radius:999px;padding:13px 22px;font:600 16px/1 var(--body);text-decoration:none;border:2px solid var(--ink);color:var(--ink);background:transparent;cursor:pointer;white-space:nowrap}
 .cta.solid{background:var(--ink);color:#fff}
 .cta:hover{transform:translateY(-1px)}
 header .cta{padding:10px 16px;font-size:15px}
@@ -87,16 +87,17 @@ section{padding:104px 0;border-top:1px solid var(--rule)}
 .facts span{font-size:14px;color:var(--mute);line-height:1.35;display:block}
 /* the stack */
 .stack{background:var(--ink);color:#E9ECF1;border-radius:26px;padding:22px;box-shadow:0 30px 60px rgba(19,22,29,.22);position:relative}
-.stack-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px;flex-wrap:wrap}
+.stack-top{display:flex;flex-direction:column;gap:14px;margin-bottom:16px}
 .stack-top .t{font:700 17px/1.2 var(--disp);color:#fff}
 .stack-top .t small{display:block;font:400 13px/1.3 var(--mono);color:#9AA3B2;margin-top:4px}
-.tabs{display:flex;gap:6px;background:#1E222B;border-radius:999px;padding:4px}
-.tabs button{all:unset;cursor:pointer;display:flex;align-items:center;gap:8px;padding:8px 13px;border-radius:999px;font:600 14px/1 var(--body);color:#AEB6C4}
+.tabs{display:flex;gap:4px;background:#1E222B;border-radius:999px;padding:4px;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tabs button{all:unset;cursor:pointer;display:flex;align-items:center;gap:7px;padding:8px 12px;border-radius:999px;font:600 14px/1 var(--body);color:#AEB6C4;white-space:nowrap;flex:1;justify-content:center}
 .tabs button[aria-selected="true"]{background:#fff;color:var(--ink)}
 .tabs button:focus-visible{outline:3px solid var(--hi);outline-offset:2px}
 .tabs img,.tabs svg{width:18px;height:18px;border-radius:4px;flex:none}
 .layers{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px}
-.layer{display:grid;grid-template-columns:118px minmax(0,1fr);gap:14px;padding:13px 14px;border-radius:14px;background:#1A1E26;border-left:4px solid var(--acc,#F2E14C);transition:border-color .3s}
+.layer{display:grid;grid-template-columns:118px minmax(0,1fr);gap:14px;padding:13px 14px;border-radius:14px;background:#1A1E26;border-left:4px solid var(--acc,#F2E14C)}
 .layer .nm{font:500 13px/1.35 var(--mono);color:#C5CCD8;padding-top:2px}
 .layer .tx{font-size:15px;line-height:1.45;color:#F1F3F6}
 .layer .ch{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
@@ -106,37 +107,94 @@ section{padding:104px 0;border-top:1px solid var(--rule)}
 .stack-foot{margin-top:14px;display:flex;justify-content:space-between;gap:10px;font:400 12.5px/1.4 var(--mono);color:#9AA3B2;flex-wrap:wrap}
 .stack-foot a{color:#fff}
 .dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:7px;vertical-align:1px}
-/* work */
-.work{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
-.proj{border-radius:24px;padding:28px;display:flex;flex-direction:column;gap:16px;position:relative;overflow:hidden;min-height:100%}
-.proj .role{font:500 13px/1.3 var(--mono);opacity:.8}
-.proj p.d{font-size:16px;line-height:1.5;opacity:.9}
-.proj ul{margin:0;padding-left:18px;font-size:15px;line-height:1.5}
-.proj li{margin-bottom:6px}
-.proj .stk{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
-.proj .stk span{font:400 11.5px/1 var(--mono);border:1px solid currentColor;border-radius:6px;padding:5px 7px;opacity:.75}
-.proj .foot{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;font-size:15px}
+/* case studies */
+.cases{display:flex;flex-direction:column;gap:28px}
+.case{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);gap:0;border-radius:28px;overflow:hidden;position:relative}
+.case.flip .txt{order:2}
+.case .txt{padding:40px;display:flex;flex-direction:column;gap:16px}
+.case .vis{position:relative;padding:56px 36px 36px;display:flex;align-items:flex-start;justify-content:center;min-height:100%}
+.case .role{font:500 13px/1.3 var(--mono);opacity:.8}
+.case p.d{font-size:17px;line-height:1.55;opacity:.92;max-width:56ch}
+.case ul{margin:0;padding-left:18px;font-size:15.5px;line-height:1.5}
+.case li{margin-bottom:7px}
+.case li b{font-weight:600}
+.stk{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:6px}
+.stk span{font:400 11.5px/1 var(--mono);border:1px solid currentColor;border-radius:6px;padding:5px 7px;opacity:.75}
+.case .foot{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;font-size:15px}
 .pill{display:inline-flex;align-items:center;gap:7px;font:500 12px/1 var(--mono);border-radius:999px;padding:7px 11px}
-.proj.vl{background:var(--vl-navy);color:var(--vl-cream)}
-.proj.vl .pill{background:rgba(0,135,81,.18);color:var(--vl-em2);border:1px solid rgba(127,211,174,.4)}
-.proj.vl .vstamp{position:absolute;right:14px;top:50px;width:74px;height:74px;transform:rotate(-12deg);opacity:.8}
-.proj.se{background:var(--se-navy);color:#fff}
-.proj.se .pill{background:rgba(198,255,61,.12);color:var(--se-lime);border:1px solid rgba(198,255,61,.4)}
-.proj.se .wm{font:600 40px/1 'Clash',var(--disp);letter-spacing:-.035em;display:flex;align-items:center;gap:12px}
-.proj.se .wm i{font-style:normal;color:var(--se-el)}
-.proj.nil{background:var(--nil);color:#EEF0F2}
-.proj.nil .pill{background:var(--hi);color:var(--ink)}
-.proj.nil .wm{font:800 44px/1 var(--disp);letter-spacing:-.04em}
-.proj.nil .wm small{font:400 14px/1.3 var(--mono);letter-spacing:0;display:block;margin-top:8px;color:#AEB4BE}
-/* capabilities */
-.caps{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:18px}
-.cap{grid-column:span 2;background:var(--sheet);border:1px solid var(--rule);border-radius:20px;padding:26px;display:flex;flex-direction:column;gap:12px}
-.cap.wide{grid-column:span 3}
-.cap .no{font:500 13px/1 var(--mono);color:var(--mute)}
-.cap p{font-size:16px;color:var(--ink2)}
-.cap ul{margin:0;padding-left:18px;font-size:15px;color:var(--ink2)}
-.cap li{margin-bottom:5px}
-.cap .tl{margin-top:auto;padding-top:12px;border-top:1px dashed var(--rule);font:400 12.5px/1.6 var(--mono);color:var(--mute)}
+.nums{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;border-top:1px solid rgba(255,255,255,.18);padding-top:14px}
+.nums b{display:block;font:800 26px/1 var(--disp);letter-spacing:-.02em}
+.nums span{display:block;font-size:13px;line-height:1.3;opacity:.75;margin-top:5px}
+.browser{width:100%;border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 24px 50px rgba(0,0,0,.35);transform:rotate(-1.2deg)}
+.case.flip .browser{transform:rotate(1.2deg)}
+.browser .bar{height:30px;background:#E6E8EC;display:flex;align-items:center;gap:6px;padding:0 12px}
+.browser .bar i{width:10px;height:10px;border-radius:50%;background:#C7CBD2}
+.browser .bar span{margin-left:10px;font:400 11.5px/1 var(--mono);color:#596171;background:#fff;border-radius:6px;padding:5px 10px}
+.browser img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top}
+.phone{position:absolute;right:22px;bottom:-30px;width:138px;border-radius:24px;overflow:hidden;border:6px solid #1a1a1a;box-shadow:0 20px 40px rgba(0,0,0,.35);background:#fff;transform:rotate(4deg)}
+.phone img{aspect-ratio:390/760;object-fit:cover;object-position:top}
+.case.se{background:var(--se-navy);color:#fff}
+.case.se .vis{background:radial-gradient(120% 90% at 70% 40%,#1b2a8a 0%,var(--se-navy) 65%)}
+.case.se .pill{background:rgba(198,255,61,.12);color:var(--se-lime);border:1px solid rgba(198,255,61,.4)}
+.case.se .wm{font:600 44px/1 'Clash',var(--disp);letter-spacing:-.035em;display:flex;align-items:center;gap:12px}
+.case.se .wm i{font-style:normal;color:var(--se-el)}
+.case.vl{background:var(--vl-navy);color:var(--vl-cream)}
+.case.vl .vis{background:radial-gradient(110% 90% at 30% 40%,#123a3a 0%,var(--vl-navy) 70%)}
+.case.vl .pill{background:rgba(0,135,81,.18);color:var(--vl-em2);border:1px solid rgba(127,211,174,.4)}
+.case.vl .vstamp{position:absolute;right:20px;top:20px;width:84px;height:84px;transform:rotate(-12deg);opacity:.85;z-index:2}
+.case.om{background:var(--om);color:#EEF0EC}
+.case.om .pill{background:var(--om-acc);color:var(--om)}
+.case.om .wm{font:800 46px/1 var(--disp);letter-spacing:-.035em}
+.case.om .wm small{font:400 14px/1.3 var(--mono);letter-spacing:0;display:block;margin-top:10px;color:#B7BFB6}
+.case.om .vis{background:var(--om2);align-items:stretch}
+.case.fh{background:var(--fh2);color:#2B1620}
+.case.fh .vis{background:linear-gradient(160deg,#F9E6EA 0%,#EFC3CF 100%);padding-bottom:56px}
+.case.fh .pill{background:var(--fh);color:#fff}
+.case.fh .wm{font:500 44px/1 'Playfair',Georgia,serif;letter-spacing:-.01em}
+.case.fh .nums{border-top-color:rgba(43,22,32,.2)}
+.case.fh .stk span{opacity:.85}
+/* Omnistead roadmap */
+.road{width:100%;display:flex;flex-direction:column;gap:7px;font-size:14.5px}
+.road .rt{font:500 12.5px/1.3 var(--mono);color:#B7BFB6;margin-bottom:6px;display:flex;justify-content:space-between;gap:8px}
+.road .ph{display:grid;grid-template-columns:40px minmax(0,1fr) auto;gap:10px;align-items:center;padding:10px 12px;border-radius:11px;background:#232A25;border:1px solid #39423B}
+.road .ph b{font:500 12.5px/1 var(--mono);color:var(--om-acc)}
+.road .ph span{color:#E3E7E1;line-height:1.35}
+.road .ph em{font:400 11px/1 var(--mono);font-style:normal;color:#8E978D;white-space:nowrap}
+.road .ph.now{background:#2F372F;border-color:var(--om-acc)}
+.road .ph.now em{color:var(--om-acc)}
+.road .gate{display:flex;align-items:center;gap:10px;font:500 12.5px/1.2 var(--mono);color:var(--om-acc);padding:4px 4px 4px 14px}
+.road .gate::before{content:"";width:10px;height:10px;transform:rotate(45deg);background:var(--om-acc);flex:none}
+.road .gate::after{content:"";flex:1;border-top:1px dashed #5A645A}
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.skill{background:var(--sheet);border:1px solid var(--rule);border-radius:22px;padding:28px;display:flex;flex-direction:column;gap:14px}
+.skill .no{font:500 13px/1 var(--mono);color:var(--mute);display:flex;justify-content:space-between;gap:10px}
+.skill h3{font-size:24px}
+.skill>p{font-size:16px;color:var(--ink2)}
+.ev{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px}
+.ev li{display:grid;grid-template-columns:96px minmax(0,1fr);gap:12px;font-size:15px;line-height:1.45;color:var(--ink2);padding-top:9px;border-top:1px dashed var(--rule)}
+.ev li:first-child{border-top:0;padding-top:0}
+.tag{font:500 11.5px/1.25 var(--mono);color:var(--ink);padding-top:3px}
+.tag::before{content:"";display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:6px;background:var(--c,#999);vertical-align:0}
+.t-se{--c:#3D5AFE}.t-vl{--c:#008751}.t-om{--c:#C49A4C}.t-fh{--c:#B4436C}.t-co{--c:#596171}.t-tf{--c:#F2E14C}
+.skill .tl{margin-top:auto;padding-top:12px;border-top:2px solid var(--ink);font:400 12.5px/1.7 var(--mono);color:var(--mute)}
+.legend{display:flex;flex-wrap:wrap;gap:16px;margin:-24px 0 32px;font-size:14px;color:var(--mute)}
+.legend .tag{color:var(--mute)}
+/* concepts */
+.concepts{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:18px}
+.cc{grid-column:span 2;background:var(--sheet);border:1px solid var(--rule);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
+.cc.big{grid-column:span 3}
+.cc .im{position:relative;aspect-ratio:16/10;overflow:hidden;border-bottom:1px solid var(--rule)}
+.cc .im img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.cc:hover .im img{transform:scale(1.03)}
+.cc .lab{position:absolute;left:12px;top:12px;font:500 11.5px/1 var(--mono);background:var(--ink);color:#fff;border-radius:999px;padding:7px 10px}
+.cc .bd{padding:16px 18px;display:flex;justify-content:space-between;gap:10px;align-items:baseline;flex-wrap:wrap}
+.cc .bd b{font:800 17px/1.2 var(--disp)}
+.cc .bd span{font:400 12.5px/1.3 var(--mono);color:var(--mute)}
+.howgen{margin-top:22px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;counter-reset:g}
+.howgen div{border-top:3px solid var(--ink);padding-top:12px;font-size:15px;color:var(--ink2);line-height:1.45}
+.howgen div b{display:block;font:800 17px/1.2 var(--disp);color:var(--ink);margin-bottom:4px}
+.note{margin-top:22px;font-size:15px;color:var(--mute);max-width:90ch;border-left:3px solid var(--hi);padding-left:14px}
 /* brand */
 .brands{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
 .spec{background:var(--sheet);border:1px solid var(--rule);border-radius:20px;overflow:hidden;display:flex;flex-direction:column}
@@ -145,14 +203,15 @@ section{padding:104px 0;border-top:1px solid var(--rule)}
 .spec .bd{padding:22px;display:flex;flex-direction:column;gap:14px}
 .sw{display:flex;gap:6px}
 .sw i{flex:1;height:34px;border-radius:7px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08)}
-.spec .ty>span:first-child{white-space:nowrap}
 .spec .ty{display:flex;justify-content:space-between;align-items:baseline;gap:10px;border-top:1px dashed var(--rule);padding-top:12px}
+.spec .ty>span:first-child{white-space:nowrap}
 .spec .ty span{font:400 12.5px/1.4 var(--mono);color:var(--mute)}
 .spec .vo{font-size:15px;color:var(--ink2)}
 .spec .assets{font-size:14px;color:var(--mute)}
-.spec .art.nilart{display:grid;place-items:center;background:var(--nil);color:#EEF0F2;text-align:center;padding:20px}
-.nilart b{font:800 54px/1 var(--disp);letter-spacing:-.04em}
-.nilart span{display:block;font:400 13px/1.4 var(--mono);color:#AEB4BE;margin-top:10px}
+.spec .art.omart{display:grid;place-items:center;background:var(--om-paper);color:var(--om);text-align:center;padding:20px}
+.omart b{font:800 50px/1 var(--disp);letter-spacing:-.035em;display:block}
+.omart i{display:block;height:3px;width:120px;background:var(--om);margin:14px auto 12px}
+.omart span{display:block;font:400 13px/1.4 var(--mono);color:#5B6359}
 /* toolkit */
 .kit{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
 .grp{background:var(--sheet);border:1px solid var(--rule);border-radius:18px;padding:22px}
@@ -199,32 +258,51 @@ footer{padding:40px 0 64px}
 .tb div:first-child{border-left:0}
 .tb span{display:block;font:400 11.5px/1.3 var(--mono);color:var(--mute);margin-bottom:4px}
 .tb b{font:600 15px/1.3 var(--body)}
+/* reveal */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+.rv.on{opacity:1;transform:none}
+@media (max-width:1100px){nav.main{gap:16px}nav.main a{font-size:15px}}
 @media (max-width:1000px){
- .hero .grid,.head,.bg,.contact{grid-template-columns:1fr}
- .work,.brands,.kit{grid-template-columns:1fr 1fr}
- .caps{grid-template-columns:1fr 1fr}.cap,.cap.wide{grid-column:span 1}
+ .hero .grid,.head,.bg,.contact{grid-template-columns:minmax(0,1fr)}
+ .stack{min-width:0}
+ .case{grid-template-columns:minmax(0,1fr)}.case.flip .txt{order:0}
+ .case .vis{padding:28px 28px 40px}
+ .brands,.kit{grid-template-columns:1fr 1fr}
+ .skills{grid-template-columns:1fr}
+ .concepts{grid-template-columns:1fr 1fr}.cc,.cc.big{grid-column:span 1}
+ .howgen{grid-template-columns:1fr 1fr}
  .loop{grid-template-columns:1fr 1fr}.rules{grid-template-columns:1fr 1fr}
  nav.main{display:none}
 }
 @media (max-width:640px){
  .wrap{padding:0 16px}body{font-size:17px}
  section{padding:72px 0}
- .work,.brands,.kit,.caps,.loop,.rules,.hl{grid-template-columns:1fr}
+ .brands,.kit,.loop,.rules,.hl,.concepts,.howgen{grid-template-columns:1fr}
  .facts{grid-template-columns:1fr 1fr}
  .layer{grid-template-columns:1fr;gap:6px}
  .stack{padding:16px;border-radius:20px}
- .tabs button{padding:8px 10px;font-size:13px}
+ .tabs button{padding:8px 10px;font-size:13px;flex:none}
+ .case{border-radius:22px}
+ .case .txt{padding:26px 22px}
+ .case .vis{padding:22px 18px 34px}
+ .case .wm,.case.se .wm,.case.om .wm,.case.fh .wm{font-size:36px}
+ .nums b{font-size:22px}
+ .phone{width:96px;right:10px;bottom:-18px;border-width:4px;border-radius:16px}
+ .browser,.case.flip .browser{transform:none}
+ .skill{padding:22px}
+ .ev li{grid-template-columns:1fr;gap:3px}
+ .road .ph{grid-template-columns:34px minmax(0,1fr)}.road .ph em{grid-column:2}
  .contact{padding:28px}
  .tb{grid-template-columns:1fr 1fr}.tb div:nth-child(3){border-left:0}.tb div:nth-child(n+3){border-top:1px solid var(--ink)}
  .film{box-shadow:6px 6px 0 var(--ink)}
 }
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero h1 .ln>span{animation:none;transform:none}.layer.in{animation:none}.cta:hover{transform:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero h1 .ln>span{animation:none;transform:none}.layer.in{animation:none}.cta:hover{transform:none}.rv{opacity:1;transform:none;transition:none}.cc:hover .im img{transform:none}}
 </style>
 </head>
 <body>
 <header class="top"><div class="wrap">
  <a class="brandname" href="#top"><i aria-hidden="true"></i>Temi Ogunfusika</a>
- <nav class="main" aria-label="Sections"><a href="#work">Work</a><a href="#capabilities">Capabilities</a><a href="#brand">Brand</a><a href="#toolkit">Toolkit</a><a href="#method">How I work</a><a href="#film">Film</a></nav>
+ <nav class="main" aria-label="Sections"><a href="#work">Work</a><a href="#skills">Skills</a><a href="#concepts">Concepts</a><a href="#brand">Brand</a><a href="#toolkit">Toolkit</a><a href="#method">How I work</a><a href="#film">Film</a></nav>
  <a class="cta solid" href="mailto:me@temifusika.com">Email me</a>
 </div></header>
 
@@ -232,21 +310,22 @@ footer{padding:40px 0 64px}
 <section class="hero"><div class="wrap grid">
  <div>
   <h1><span class="ln"><span>I architect brands,</span></span><span class="ln"><span>platforms and the</span></span><span class="ln"><span><span class="mark">AI automations</span></span></span><span class="ln"><span>that run them.</span></span></h1>
-  <p class="lede">I’m the founder of seer., co-founder of Venuralink, and I’m now building Nil. I take a business from its name and identity to a secure cloud platform, AI automation, search visibility and launch, and I own every layer in between.</p>
-  <div class="ctas"><a class="cta solid" href="#work">See the work</a><a class="cta" href="#film">Watch the 36-second film</a></div>
+  <p class="lede">I’m the founder of seer., co-founder of Venuralink, and I’m now building Omnistead. I also build for clients. I take a business from its name and identity to a secure cloud platform, AI automation, search visibility and launch, and I own every layer in between.</p>
+  <div class="ctas"><a class="cta solid" href="#work">See the work</a><a class="cta" href="#skills">Skills, with evidence</a></div>
   <div class="facts">
-   <div><b>3</b><span>ventures built from zero</span></div>
-   <div><b>2</b><span>platforms live in production</span></div>
+   <div><b>299</b><span>pull requests merged into seer. since 29 Sep 2026</span></div>
+   <div><b>107</b><span>database test files guarding seer.’s data rules</span></div>
+   <div><b>4</b><span>platforms: three ventures and a live client site</span></div>
    <div><b>£200M+</b><span>spend managed in 15+ years of procurement</span></div>
-   <div><b>MSc</b><span>Cranfield, MCIPS chartered</span></div>
   </div>
  </div>
  <div class="stack" aria-label="Interactive build stack">
-  <div class="stack-top"><div class="t">The stack, layer by layer<small>Pick a venture to see what sits in each layer</small></div>
-   <div class="tabs" role="tablist" aria-label="Choose a venture">
+  <div class="stack-top"><div class="t">The stack, layer by layer<small>Pick a project to see what sits in each layer</small></div>
+   <div class="tabs" role="tablist" aria-label="Choose a project">
     <button role="tab" id="tab-se" aria-controls="layers" aria-selected="true" data-p="se"><svg viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="24" fill="#3D5AFE"/><g transform="translate(14 14) scale(.72)"><path d="M3 50 C 22 10, 78 10, 97 50 C 78 90, 22 90, 3 50 Z" fill="#fff"/><circle cx="50" cy="50" r="21" fill="#3D5AFE"/><circle cx="50" cy="50" r="15.5" fill="none" stroke="#C6FF3D" stroke-width="3.2" stroke-dasharray="18 6.35"/><circle cx="50" cy="50" r="8.5" fill="#C6FF3D"/></g></svg>seer.</button>
     <button role="tab" id="tab-vl" aria-controls="layers" aria-selected="false" tabindex="-1" data-p="vl"><img src="assets/img/venuralink-icon.png" alt="" width="18" height="18">Venuralink</button>
-    <button role="tab" id="tab-nil" aria-controls="layers" aria-selected="false" tabindex="-1" data-p="nil"><svg viewBox="0 0 20 20" aria-hidden="true"><rect width="20" height="20" rx="5" fill="#F2E14C"/><text x="10" y="14" font-family="Arial" font-weight="700" font-size="10" text-anchor="middle" fill="#13161D">N</text></svg>Nil</button>
+    <button role="tab" id="tab-om" aria-controls="layers" aria-selected="false" tabindex="-1" data-p="om"><svg viewBox="0 0 20 20" aria-hidden="true"><rect width="20" height="20" rx="5" fill="#D9B46A"/><rect x="4" y="12" width="12" height="2.2" rx="1" fill="#1D2420"/><text x="10" y="10.5" font-family="Arial" font-weight="700" font-size="8.5" text-anchor="middle" fill="#1D2420">O</text></svg>Omnistead</button>
+    <button role="tab" id="tab-fh" aria-controls="layers" aria-selected="false" tabindex="-1" data-p="fh"><svg viewBox="0 0 20 20" aria-hidden="true"><rect width="20" height="20" rx="5" fill="#B4436C"/><text x="10" y="14.5" font-family="Georgia,serif" font-style="italic" font-size="12" text-anchor="middle" fill="#fff">f</text></svg>Fabhands</button>
    </div></div>
   <ol class="layers" id="layers" role="tabpanel" aria-labelledby="tab-se" aria-live="polite"></ol>
   <div class="stack-foot"><span id="sf-status"></span><a id="sf-link" href="#work">Read the case</a></div>
@@ -254,106 +333,245 @@ footer{padding:40px 0 64px}
 </div></section>
 
 <section id="work"><div class="wrap">
- <div class="head"><div><span class="kicker">Current work</span><h2>Three ventures, one builder</h2></div><p>Each one starts with the same discipline: make every claim checkable, and build the trust rules into the system itself rather than the screen.</p></div>
- <div class="work">
-  <article class="proj se">
-   <div class="role">Founder · Seer Consult Ltd · UK</div>
-   <div class="wm"><svg width="54" height="54" viewBox="0 0 100 100" aria-hidden="true"><path d="M3 50 C 22 10, 78 10, 97 50 C 78 90, 22 90, 3 50 Z" fill="#fff"/><circle cx="50" cy="50" r="21" fill="#0A0F24"/><circle cx="50" cy="50" r="15.5" fill="none" stroke="#C6FF3D" stroke-width="3.2" stroke-dasharray="18 6.35"/><circle cx="50" cy="50" r="8.5" fill="#C6FF3D"/></svg><span>seer<i>.</i></span></div>
-   <p class="d">A carbon and compliance platform for UK businesses that are asked to prove their numbers: measure, comply, reduce and prove, with every figure traced to the bill behind it.</p>
-   <ul>
-    <li>Evidence Ledger with a second-person check enforced in the database</li>
-    <li>Plan writer for PPN 006 and NHS 2027 Carbon Reduction Plans, gated by a rules-based Guardrail</li>
-    <li>AI bill reading on Google Cloud Vertex AI, processed in London, with a person confirming every value</li>
-    <li>Compliance calendar, supplier figures, tender answers and daily automated reminders</li>
-   </ul>
-   <div class="stk"><span>Next.js</span><span>TypeScript</span><span>Postgres</span><span>Vertex AI</span><span>Vercel</span><span>Sentry</span></div>
-   <div class="foot"><span class="pill"><i class="dot" style="background:#C6FF3D"></i>Live</span><a href="https://seerconsult.com" target="_blank" rel="noopener">seerconsult.com</a></div>
+ <div class="head rv"><div><span class="kicker">Current work</span><h2>Three ventures and a client platform</h2></div><p>Each one starts with the same discipline: make every claim checkable, and build the trust rules into the system itself rather than the screen.</p></div>
+ <div class="cases">
+
+  <article class="case se rv">
+   <div class="txt">
+    <div class="role">Founder · Seer Consult Ltd · UK</div>
+    <div class="wm"><svg width="54" height="54" viewBox="0 0 100 100" aria-hidden="true"><path d="M3 50 C 22 10, 78 10, 97 50 C 78 90, 22 90, 3 50 Z" fill="#fff"/><circle cx="50" cy="50" r="21" fill="#0A0F24"/><circle cx="50" cy="50" r="15.5" fill="none" stroke="#C6FF3D" stroke-width="3.2" stroke-dasharray="18 6.35"/><circle cx="50" cy="50" r="8.5" fill="#C6FF3D"/></svg><span>seer<i>.</i></span></div>
+    <p class="d">A carbon and compliance platform for UK businesses that are asked to prove their numbers: measure, comply, reduce and prove, with every figure traced to the bill behind it.</p>
+    <ul>
+     <li><b>Evidence Ledger</b> with a second-person check enforced in the database, and a rules-based Guardrail that blocks any figure not traced to checked data</li>
+     <li><b>SECR reporting</b> under the Companies Act 2006, with the size tests, group statements and output as PDF and Word</li>
+     <li><b>Parent and subsidiary groups</b>: combined footprints, purchases between group companies removed, group carbon plans signed by the parent</li>
+     <li><b>AI bill reading</b> on Google Cloud Vertex AI in London, with a person confirming every value</li>
+     <li><b>Enterprise readiness</b>: two-factor sign-in, an audit log, full data export with SHA-256 manifests, and nightly file backups to Google Cloud London</li>
+    </ul>
+    <div class="nums"><div><b>299</b><span>pull requests merged since 29 Sep</span></div><div><b>108</b><span>forward-only database migrations</span></div><div><b>50,000</b><span>entries in the enterprise load test</span></div></div>
+    <div class="stk"><span>Next.js 15</span><span>TypeScript</span><span>Supabase Postgres 17</span><span>pgTAP</span><span>Vertex AI</span><span>Google Cloud</span><span>Vercel</span><span>Sentry</span><span>Upstash</span></div>
+    <div class="foot"><span class="pill"><i class="dot" style="background:#C6FF3D"></i>Live</span><a href="https://seerconsult.com" target="_blank" rel="noopener">seerconsult.com</a></div>
+   </div>
+   <div class="vis"><div class="browser"><div class="bar"><i></i><i></i><i></i><span>seerconsult.com</span></div><img src="assets/img/shot-seer.jpg" alt="seer. homepage: Measure your carbon free." width="1120" height="700" loading="lazy"></div></div>
   </article>
-  <article class="proj vl">
-   <svg class="vstamp" viewBox="-100 -100 200 200" aria-hidden="true"><circle r="95" fill="none" stroke="#7FD3AE" stroke-width="2.5"/><circle r="78" fill="none" stroke="#7FD3AE" stroke-width="2" stroke-dasharray="2 4"/><defs><path id="sa" d="M -80,0 A 80,80 0 0 1 80,0"/><path id="sb" d="M -80,10 A 80,80 0 0 0 80,10"/></defs><g fill="#7FD3AE" font-family="Playfair,Georgia,serif" font-weight="500"><text font-size="12" letter-spacing="1"><textPath href="#sa" startOffset="50%" text-anchor="middle">VENURALINK · VERIFIED · NIGERIA</textPath></text><text font-size="10" letter-spacing="1"><textPath href="#sb" startOffset="50%" text-anchor="middle">SPACES · PEOPLE · MOMENTS</textPath></text><text y="12" font-size="40" font-style="italic" text-anchor="middle">Verified</text></g></svg>
-   <div class="role">Co-founder · Venuralink · Nigeria</div>
-   <img src="assets/img/venuralink-logo-white.png" alt="Venuralink. Spaces. People. Moments." width="210" height="53" style="width:210px;margin-top:4px">
-   <p class="d">Nigeria’s verified marketplace for event venues and vendors, in Lagos, Abuja and Port Harcourt. I lead product, platform, trust and launch.</p>
-   <ul>
-    <li>Booking flow tested end to end, from enquiry to close, with branded emails</li>
-    <li>Closed a full security and content audit; two staff roles enforced in the database</li>
-    <li>Structured data on every listing and a generated sitemap for search</li>
-    <li>Outreach automation, staged waitlist and bulk partner import</li>
-   </ul>
-   <div class="stk"><span>JavaScript</span><span>Supabase</span><span>Deno</span><span>Apps Script</span><span>Resend</span><span>JSON-LD</span></div>
-   <div class="foot"><span class="pill"><i class="dot" style="background:#7FD3AE"></i>Live · founding partners</span><a href="https://venuralink.com" target="_blank" rel="noopener">venuralink.com</a></div>
+
+  <article class="case vl flip rv">
+   <div class="txt">
+    <div class="role">Co-founder · Venuralink · Nigeria</div>
+    <img src="assets/img/venuralink-logo-white.png" alt="Venuralink. Spaces. People. Moments." width="210" height="53" style="width:210px;margin-top:4px">
+    <p class="d">Nigeria’s verified marketplace for event venues and vendors, in Lagos, Abuja and Port Harcourt. I lead product, platform, trust and launch.</p>
+    <ul>
+     <li><b>Booking flow tested end to end</b>, from enquiry to close, with branded emails sent from edge functions</li>
+     <li><b>Security and content audit closed</b>; two staff roles enforced by database functions; hosts see an organiser’s first name only</li>
+     <li><b>Search built in</b>: structured data on every listing, a generated sitemap and seven conversion goals</li>
+     <li><b>Outreach automation</b> in Google Apps Script, a staged waitlist and bulk partner import</li>
+     <li><b>Terms and privacy</b> written for Nigeria’s Data Protection Act 2023; email authenticated with SPF, DKIM and DMARC</li>
+    </ul>
+    <div class="nums"><div><b>160+</b><span>change packages over 23 build sessions</span></div><div><b>12</b><span>service categories</span></div><div><b>3</b><span>launch cities</span></div></div>
+    <div class="stk"><span>JavaScript</span><span>Supabase</span><span>Deno edge functions</span><span>Apps Script</span><span>Resend</span><span>JSON-LD</span><span>Plausible</span></div>
+    <div class="foot"><span class="pill"><i class="dot" style="background:#7FD3AE"></i>Live · founding partners</span><a href="https://venuralink.com" target="_blank" rel="noopener">venuralink.com</a></div>
+   </div>
+   <div class="vis">
+    <svg class="vstamp" viewBox="-100 -100 200 200" aria-hidden="true"><circle r="95" fill="#0A192F" stroke="#7FD3AE" stroke-width="2.5"/><circle r="78" fill="none" stroke="#7FD3AE" stroke-width="2" stroke-dasharray="2 4"/><defs><path id="sa" d="M -80,0 A 80,80 0 0 1 80,0"/><path id="sb" d="M -80,10 A 80,80 0 0 0 80,10"/></defs><g fill="#7FD3AE" font-family="Playfair,Georgia,serif" font-weight="500"><text font-size="12" letter-spacing="1"><textPath href="#sa" startOffset="50%" text-anchor="middle">VENURALINK · VERIFIED · NIGERIA</textPath></text><text font-size="10" letter-spacing="1"><textPath href="#sb" startOffset="50%" text-anchor="middle">SPACES · PEOPLE · MOMENTS</textPath></text><text y="12" font-size="40" font-style="italic" text-anchor="middle">Verified</text></g></svg>
+    <div class="browser"><div class="bar"><i></i><i></i><i></i><span>venuralink.com</span></div><img src="assets/img/shot-venuralink.jpg" alt="Venuralink homepage: Every great event starts with the right space." width="1120" height="700" loading="lazy"></div>
+   </div>
   </article>
-  <article class="proj nil">
-   <div class="role">Founder · new venture · UK</div>
-   <div class="wm">Nil<small>One system from signed contract to settled books</small></div>
-   <p class="d">Contract-to-cash and books of record for UK professional-services firms of 20 to 200 people, so nothing is re-keyed and nothing goes unreconciled.</p>
-   <ul>
-    <li>Multi-tenant PostgreSQL foundation: 60 tables and 70 row-level security policies, forced on every tenant table</li>
-    <li>Double-entry, append-only ledger with a hash-sealed audit log</li>
-    <li>104 automated schema checks passing, including negative tests for cross-tenant access</li>
-    <li>Architecture decisions, brand brief and trademark brief written before any code</li>
-   </ul>
-   <div class="stk"><span>PostgreSQL 16</span><span>SQL</span><span>Bash</span><span>GitHub Actions</span><span>Node 22</span></div>
-   <div class="foot"><span class="pill">In development</span><span style="opacity:.75">Foundation phase</span></div>
+
+  <article class="case om rv">
+   <div class="txt">
+    <div class="role">Founder · new venture · UK</div>
+    <div class="wm">Omnistead<small>One home for everything your firm runs on.</small></div>
+    <p class="d">One system that runs a professional-services firm from signed contract to settled books, and keeps the books of record, including VAT filed with HMRC. Built for UK agencies, consultancies, IT services providers and accountancy practices of 20 to 200 people.</p>
+    <ul>
+     <li><b>29 business functions in one system</b>: clients and onboarding checks, contracts with AI review, approvals, e-signature, invoicing, payments, ledger, VAT, projects and time, bids, purchasing, a client portal and role dashboards</li>
+     <li><b>17 access roles</b>, from staff to partners, finance, bid teams and auditors, assigned in WorkOS and checked by the database</li>
+     <li><b>Multi-tenant PostgreSQL</b>: 60 tables and 70 row-level security policies, a double-entry ledger, a transactional outbox and an audit log</li>
+     <li><b>Isolation tested hard</b>: a deliberate data leak between firms is caught by the tests, and the app refuses to start as a superuser</li>
+     <li><b>Money never as a float</b>: decimal strings end to end, stored as numeric(19,4), rounded only in the database</li>
+    </ul>
+    <div class="nums"><div><b>104</b><span>schema checks on a fresh database every run</span></div><div><b>120</b><span>foreign keys indexed by a linted migration</span></div><div><b>12</b><span>build phases, three launch gates</span></div></div>
+    <div class="stk"><span>TypeScript</span><span>Node 22</span><span>Fastify</span><span>Kysely</span><span>Zod</span><span>PostgreSQL 16</span><span>WorkOS</span><span>AWS London</span><span>Vitest</span><span>GitHub Actions</span></div>
+    <div class="foot"><span class="pill">In development · Phase 0</span><span style="opacity:.75">Sign-in working end to end</span></div>
+   </div>
+   <div class="vis">
+    <div class="road" aria-label="Omnistead build phases">
+     <div class="rt"><span>Build plan</span><span>each phase merges only when its checks pass</span></div>
+     <div class="ph now"><b>0</b><span>Foundation: database, firm isolation, sign-in, monitoring</span><em>in progress</em></div>
+     <div class="ph"><b>1</b><span>Clients, linked email, ID and anti-money-laundering checks</span><em>next</em></div>
+     <div class="ph"><b>2</b><span>Contracts with AI review, approval rules, e-signature</span><em>planned</em></div>
+     <div class="ph"><b>3</b><span>Invoices with VAT, ledger postings, payments, chasing</span><em>planned</em></div>
+     <div class="gate">Private pilot</div>
+     <div class="ph"><b>3b</b><span>Books of record: bank reconciliation, year end, MTD VAT</span><em>planned</em></div>
+     <div class="gate">Books-of-record launch</div>
+     <div class="ph"><b>4–6</b><span>Projects and time, bids and proposals, purchasing, client portal</span><em>planned</em></div>
+     <div class="ph"><b>6c–7</b><span>Dashboards, “Ask Omnistead”, load tests, pen test</span><em>planned</em></div>
+     <div class="gate">Wider launch</div>
+    </div>
+   </div>
   </article>
+
+  <article class="case fh flip rv">
+   <div class="txt">
+    <div class="role">Client build · Fabhands Makeovers · Bedford, Milton Keynes and London</div>
+    <div class="wm">Fabhands</div>
+    <p class="d">A marketing site and booking system for a bespoke makeup artist and gele stylist: from enquiry to booked appointment, with every message landing in her inbox and on record.</p>
+    <ul>
+     <li><b>Online booking</b> through Cal.com, synced with her Google Calendar</li>
+     <li><b>Signature-verified webhooks</b> that save every booking to Supabase and send branded confirmations through Resend, with a calendar invite generated in code</li>
+     <li><b>Contact form</b> saved to a locked-down database (row-level security, server-only access) and emailed to the business and the enquirer</li>
+     <li><b>Email deliverability</b> traced across DMARC, SPF and DKIM; failed sends made visible in the logs instead of failing silently</li>
+     <li><b>Fast on mobile</b>: icon fonts replaced with bundled SVGs, real client photography only, Open Graph image, sitemap and robots</li>
+    </ul>
+    <div class="stk"><span>Next.js 16</span><span>React 19</span><span>TypeScript</span><span>Tailwind CSS 4</span><span>GSAP</span><span>Supabase</span><span>Resend</span><span>Cal.com</span><span>Zod</span><span>Vercel</span></div>
+    <div class="foot"><span class="pill"><i class="dot" style="background:#fff"></i>Live</span><a href="https://www.fabhands.co.uk" target="_blank" rel="noopener">fabhands.co.uk</a></div>
+   </div>
+   <div class="vis">
+    <div class="browser"><div class="bar"><i></i><i></i><i></i><span>fabhands.co.uk</span></div><img src="assets/img/shot-fabhands.jpg" alt="Fabhands homepage: Skin-like makeup, made for you." width="1120" height="700" loading="lazy"></div>
+    <div class="phone"><img src="assets/img/shot-fabhands-m.jpg" alt="" width="390" height="844" loading="lazy"></div>
+   </div>
+  </article>
+
  </div>
 </div></section>
 
-<section id="capabilities"><div class="wrap">
- <div class="head"><div><span class="kicker">What I do</span><h2>Five capabilities, used together</h2></div><p>Most teams split these across an agency, a dev shop and an IT department. I carry them as one job, so the brand, the platform and the automation tell the same story.</p></div>
- <div class="caps">
-  <div class="cap wide"><span class="no">Brand architecture</span><h3>Names, identities and the systems that keep them consistent</h3><p>Positioning, naming, identity and voice, turned into design tokens that code and design both use, so a brand cannot drift.</p><ul><li>Three brand systems: seer., Venuralink and Nil</li><li>Launch films with voiceover in up to five formats, covers and social cuts</li><li>Sales packs, pitch scripts, handbooks and trademark briefs</li></ul><div class="tl">Design tokens · type and colour systems · motion · copy rules</div></div>
-  <div class="cap wide"><span class="no">AI automation</span><h3>AI that proposes, and people who decide</h3><p>AI built into real workflows, with guardrails: it reads, drafts and routes; a person confirms anything that matters.</p><ul><li>Bill reading on Vertex AI (Gemini) with human confirmation and spend caps</li><li>Rules-based Guardrail that blocks any figure not traced to checked data</li><li>Outreach, reminder and email pipelines that run on schedules</li></ul><div class="tl">Vertex AI · Claude Code · prompt engineering · Apps Script</div></div>
-  <div class="cap"><span class="no">Platforms and IT</span><h3>Web platforms, end to end</h3><p>Specified, reviewed and shipped full-stack products, from marketing site to signed-in workspace.</p><ul><li>Next.js and React app in a TypeScript monorepo</li><li>Static, fast sites on Vercel</li></ul><div class="tl">TypeScript · Next.js · Supabase · Vercel</div></div>
-  <div class="cap"><span class="no">Cloud, data and security</span><h3>Security in the database, not the interface</h3><p>Row-level security, role models, audit trails and keyless cloud access.</p><ul><li>Google Cloud workload identity federation: no stored keys</li><li>UK data residency; GDPR and NDPA-aligned terms</li></ul><div class="tl">Google Cloud · PostgreSQL · RLS · Sentry</div></div>
-  <div class="cap"><span class="no">SEO and growth</span><h3>Found, measured and launched</h3><p>Technical SEO and launch work that gets a new brand discovered and measured.</p><ul><li>Schema.org structured data and generated sitemaps</li><li>Lighthouse audits; privacy-friendly analytics with conversion goals</li></ul><div class="tl">JSON-LD · Lighthouse · Plausible · email authentication</div></div>
+<section id="skills"><div class="wrap">
+ <div class="head rv"><div><span class="kicker">Skills</span><h2>Eight skills, each with the evidence</h2></div><p>Every line below points to something built and running, or written and tested, in one of the projects above. The tag says where to look.</p></div>
+ <div class="legend rv"><span class="tag t-se">seer.</span><span class="tag t-vl">Venuralink</span><span class="tag t-om">Omnistead</span><span class="tag t-fh">Fabhands</span><span class="tag t-co">Concepts</span><span class="tag t-tf">This site</span></div>
+ <div class="skills">
+
+  <div class="skill rv"><span class="no"><span>01</span><span>Full-stack product engineering</span></span><h3>Products, from first screen to signed PDF</h3>
+   <ul class="ev">
+    <li><span class="tag t-se">seer.</span><span>A Next.js and TypeScript monorepo (pnpm, Turborepo) with six internal packages: carbon maths, the Guardrail, the plan writer, AI agents, database and design tokens</span></li>
+    <li><span class="tag t-se">seer.</span><span>Statements and plans produced as PDF and Word; CSV, zip and audit-log exports streamed to the browser</span></li>
+    <li><span class="tag t-om">Omnistead</span><span>A Fastify API with Kysely and Zod in one modular TypeScript application, with structured logs carrying request ids</span></li>
+    <li><span class="tag t-fh">Fabhands</span><span>Next.js 16, React 19 and Tailwind CSS 4, with GSAP motion and an Open Graph image generated in code</span></li>
+   </ul><div class="tl">TypeScript · Next.js · React · Fastify · Kysely · Zod · react-pdf · docx</div></div>
+
+  <div class="skill rv"><span class="no"><span>02</span><span>Database design and security</span></span><h3>Security in the database, not the interface</h3>
+   <ul class="ev">
+    <li><span class="tag t-om">Omnistead</span><span>60 tables and 70 row-level security policies forced on every firm’s data; the firm is set per transaction, so pooled connections can’t leak</span></li>
+    <li><span class="tag t-om">Omnistead</span><span>A double-entry ledger, a transactional outbox and an audit log; a migration that indexes all 120 foreign keys, enforced by a lint</span></li>
+    <li><span class="tag t-se">seer.</span><span>108 forward-only migrations and 107 pgTAP test files; a second person must check each entry before it counts</span></li>
+    <li><span class="tag t-vl">Venuralink</span><span>Two staff roles enforced by database functions, and organisers’ details limited to a first name</span></li>
+   </ul><div class="tl">PostgreSQL 16/17 · PL/pgSQL · row-level security · pgTAP · Supabase · pgvector</div></div>
+
+  <div class="skill rv"><span class="no"><span>03</span><span>AI and automation</span></span><h3>AI that proposes, and people who decide</h3>
+   <ul class="ev">
+    <li><span class="tag t-se">seer.</span><span>Gemini on Vertex AI reads uploaded bills in London; a person confirms each value, and spend is capped</span></li>
+    <li><span class="tag t-se">seer.</span><span>A Guardrail written as YAML rules that blocks plan wording any checked figure can’t back up</span></li>
+    <li><span class="tag t-co">Concepts</span><span>A Python generator that turns public business details into a personalised booking site, filtering reviews for tone</span></li>
+    <li><span class="tag t-vl">Venuralink</span><span>Outreach pipelines in Google Apps Script and scheduled, branded emails</span></li>
+    <li><span class="tag t-om">Omnistead</span><span>A scheduled AI build session every morning, merged only when every check passes, with a status update by phone and email</span></li>
+   </ul><div class="tl">Vertex AI (Gemini) · Claude Code · Python · Apps Script · prompt engineering</div></div>
+
+  <div class="skill rv"><span class="no"><span>04</span><span>Cloud, identity and operations</span></span><h3>Keyless, monitored and recoverable</h3>
+   <ul class="ev">
+    <li><span class="tag t-om">Omnistead</span><span>AWS in London (eu-west-2), with WorkOS for sign-in, single sign-on, SAML and SCIM per customer</span></li>
+    <li><span class="tag t-se">seer.</span><span>Google Cloud reached with workload identity federation, so no keys are stored anywhere</span></li>
+    <li><span class="tag t-se">seer.</span><span>Nightly file backups to Google Cloud London with SHA-256 checks, alerts, a restore script and a runbook</span></li>
+    <li><span class="tag t-se">seer.</span><span>Sentry for errors and cron check-ins; a smoke check after every deploy, run by a role that can read no data</span></li>
+   </ul><div class="tl">AWS · Google Cloud · WorkOS · Sentry · Vercel · GitHub Actions · Docker</div></div>
+
+  <div class="skill rv"><span class="no"><span>05</span><span>Performance and testing</span></span><h3>Measured, then made faster</h3>
+   <ul class="ev">
+    <li><span class="tag t-se">seer.</span><span>An enterprise-scale load test, 50,000 entries across 300 sites, with fingerprints that prove speed fixes never change a figure</span></li>
+    <li><span class="tag t-se">seer.</span><span>Plan builds cut from 2.7 s to 1.6 s and reports made about 25% faster</span></li>
+    <li><span class="tag t-om">Omnistead</span><span>Tenant isolation tests checked by mutation: a deliberate leak between firms is caught by two tests</span></li>
+    <li><span class="tag t-se">seer.</span><span>A check that fails the build when the app names a table or column the database doesn’t have</span></li>
+   </ul><div class="tl">Vitest · pgTAP · Playwright · Lighthouse · load testing · CI gates</div></div>
+
+  <div class="skill rv"><span class="no"><span>06</span><span>UK regulation and compliance</span></span><h3>Rules turned into product</h3>
+   <ul class="ev">
+    <li><span class="tag t-se">seer.</span><span>SECR under the Companies Act 2006, PPN 006 and NHS 2027 Carbon Reduction Plans, using DESNZ conversion factors</span></li>
+    <li><span class="tag t-se">seer.</span><span>Data protection impact assessments for AI bill reading and supplier sharing; client data processing terms through six versions</span></li>
+    <li><span class="tag t-om">Omnistead</span><span>Designed for HMRC Making Tax Digital VAT filing, and anti-money-laundering and conflict checks before the first contract</span></li>
+    <li><span class="tag t-vl">Venuralink</span><span>Terms and privacy written for Nigeria’s Data Protection Act 2023</span></li>
+   </ul><div class="tl">SECR · PPN 006 · UK GDPR · DPIAs · MTD VAT · NDPA 2023</div></div>
+
+  <div class="skill rv"><span class="no"><span>07</span><span>Integrations and email</span></span><h3>Systems that talk to each other</h3>
+   <ul class="ev">
+    <li><span class="tag t-fh">Fabhands</span><span>Cal.com bookings synced with Google Calendar, received by signature-verified webhooks, with calendar invites generated in code</span></li>
+    <li><span class="tag t-fh">Fabhands</span><span>Deliverability diagnosed across DMARC, SPF and DKIM on a sending subdomain</span></li>
+    <li><span class="tag t-se">seer.</span><span>Companies House lookups, Upstash rate limits and Resend email, with Mailpit for local testing</span></li>
+    <li><span class="tag t-tf">This site</span><span>A custom-domain mailbox with SPF, DKIM and DMARC, and DNS moved to Vercel</span></li>
+   </ul><div class="tl">Resend · Cal.com · webhooks · Companies House API · Upstash · DNS</div></div>
+
+  <div class="skill rv"><span class="no"><span>08</span><span>Brand, design and search</span></span><h3>Found, remembered and consistent</h3>
+   <ul class="ev">
+    <li><span class="tag t-se">seer.</span><span>Design tokens generated from one source, so the site and the app can’t drift</span></li>
+    <li><span class="tag t-se">seer.</span><span>Launch films with voiceover, rendered frame by frame in code, in up to five formats</span></li>
+    <li><span class="tag t-co">Concepts</span><span>Four art directions, for barbers, salons, nail studios and car washes, plus a hand-built homepage for a builder</span></li>
+    <li><span class="tag t-vl">Venuralink</span><span>Schema.org structured data, generated sitemaps and privacy-friendly analytics with conversion goals</span></li>
+   </ul><div class="tl">Design tokens · motion · JSON-LD · sitemaps · Open Graph · Plausible</div></div>
+
  </div>
+</div></section>
+
+<section id="concepts"><div class="wrap">
+ <div class="head rv"><div><span class="kicker">Concepts</span><h2>Website concepts, generated from real business details</h2></div><p>38 one-page concepts for UK small businesses: 37 generated by a Python pipeline and one built by hand. They are concepts only: none of these businesses commissioned them, and none is their live site.</p></div>
+ <div class="concepts">
+  <figure class="cc big rv" style="margin:0"><div class="im"><img src="assets/img/concept-barber.jpg" alt="Concept for a barber shop in Harrow, with online booking." width="1120" height="700" loading="lazy"><span class="lab">Concept · not commissioned</span></div><figcaption class="bd"><b>Barber shop</b><span>Harrow · booking slot picker</span></figcaption></figure>
+  <figure class="cc big rv" style="margin:0"><div class="im"><img src="assets/img/concept-carwash.jpg" alt="Concept for a hand car wash in Leicester, with a price board by vehicle size." width="1120" height="700" loading="lazy"><span class="lab">Concept · not commissioned</span></div><figcaption class="bd"><b>Hand car wash</b><span>Leicester · price board by vehicle</span></figcaption></figure>
+  <figure class="cc rv" style="margin:0"><div class="im"><img src="assets/img/concept-salon.jpg" alt="Concept for a hair salon in Watford." width="1120" height="700" loading="lazy"><span class="lab">Concept · not commissioned</span></div><figcaption class="bd"><b>Hair salon</b><span>Watford</span></figcaption></figure>
+  <figure class="cc rv" style="margin:0"><div class="im"><img src="assets/img/concept-nails.jpg" alt="Concept for a nail studio in Nottingham." width="1120" height="700" loading="lazy"><span class="lab">Concept · not commissioned</span></div><figcaption class="bd"><b>Nail studio</b><span>Nottingham</span></figcaption></figure>
+  <figure class="cc rv" style="margin:0"><div class="im"><img src="assets/img/concept-fagan.jpg" alt="Hand-built homepage concept for a building contractor." width="1120" height="700" loading="lazy"><span class="lab">Concept · not commissioned</span></div><figcaption class="bd"><b>Building contractor</b><span>Hand-built homepage</span></figcaption></figure>
+ </div>
+ <div class="howgen rv">
+  <div><b>1 · Gather</b>Opening hours, address, rating and reviews for 37 businesses in 17 UK towns and cities.</div>
+  <div><b>2 · Filter</b>Only positive reviews are quoted, trimmed at a sentence break; anything negative is dropped.</div>
+  <div><b>3 · Generate</b>One template per trade fills in services, prices, hours and a working booking picker.</div>
+  <div><b>4 · Label</b>Every page carries a “Concept preview, not their live site” banner and is hidden from search engines.</div>
+ </div>
+ <p class="note">Prices on the concepts are typical examples for each trade, not the businesses’ own.</p>
 </div></section>
 
 <section id="brand"><div class="wrap">
- <div class="head"><div><span class="kicker">Brand architecture</span><h2>Three brands, three systems</h2></div><p>Each brand has its own mark, palette, type pairing and voice, written down as rules and shared with the code. These are the actual systems in use.</p></div>
+ <div class="head rv"><div><span class="kicker">Brand architecture</span><h2>Three brands, three systems</h2></div><p>Each brand has its own mark, palette, type pairing and voice, written down as rules and shared with the code.</p></div>
  <div class="brands">
-  <article class="spec"><div class="art"><img src="assets/img/seer-campaign.jpg" alt="seer. campaign cover: We see what’s next." width="960" height="540" loading="lazy"></div><div class="bd">
+  <article class="spec rv"><div class="art"><img src="assets/img/seer-campaign.jpg" alt="seer. campaign cover: We see what’s next." width="960" height="540" loading="lazy"></div><div class="bd">
    <h3>seer.</h3><div class="sw" aria-label="Palette"><i style="background:#0A0F24"></i><i style="background:#3D5AFE"></i><i style="background:#C6FF3D"></i><i style="background:#F6F5F0"></i></div>
    <div class="ty"><span style="font-family:'Cabinet';font-weight:800;font-size:18px;color:var(--ink)">Cabinet Grotesk</span><span>Switzer · Clash Display</span></div>
    <p class="vo">Voice: precise and calm. “Checked”, never “verified”; no claim without a source.</p>
    <p class="assets">Eye mark with a rotating iris · 74-second voiceover film in five formats · covers and website loop</p></div></article>
-  <article class="spec"><div class="art"><img src="assets/img/venuralink-campaign.jpg" alt="Venuralink end card: Because your event deserves better." width="960" height="540" loading="lazy"></div><div class="bd">
+  <article class="spec rv"><div class="art"><img src="assets/img/venuralink-campaign.jpg" alt="Venuralink end card: Because your event deserves better." width="960" height="540" loading="lazy"></div><div class="bd">
    <h3>Venuralink</h3><div class="sw" aria-label="Palette"><i style="background:#0A192F"></i><i style="background:#008751"></i><i style="background:#C86D51"></i><i style="background:#FDFBF7"></i></div>
    <div class="ty"><span style="font-family:'Playfair';font-style:italic;font-size:19px;color:var(--ink)">Playfair Display</span><span>Inter · JetBrains Mono</span></div>
    <p class="vo">Voice: warm, Nigerian, confident. One copper word per screen; no time promises.</p>
    <p class="assets">Pin-and-chain mark · Verified stamp · 99.6-second campaign film in four formats · sales pack and business cards</p></div></article>
-  <article class="spec"><div class="art nilart"><div><b>Nil</b><span>Nil. Because 1&nbsp;&gt;&nbsp;2.</span></div></div><div class="bd">
-   <h3>Nil</h3><div class="sw" aria-label="Palette to be designed"><i style="background:#1B1E23"></i><i style="background:#F2F3F5"></i><i style="background:repeating-linear-gradient(45deg,#DDE1E6 0 6px,#F2F3F5 6px 12px)"></i><i style="background:repeating-linear-gradient(45deg,#DDE1E6 0 6px,#F2F3F5 6px 12px)"></i></div>
-   <div class="ty"><span style="font-family:'Cabinet';font-weight:800;font-size:20px;color:var(--ink)">To be designed</span><span>brief written</span></div>
-   <p class="vo">Voice: calm, exact, trustworthy with money. Plain English, short sentences.</p>
-   <p class="assets">Brand brief for designers · trademark brief for an attorney · logo commissioned only after legal clearance</p></div></article>
+  <article class="spec rv"><div class="art omart"><div><b>Omnistead</b><i></i><span>From signed contract to settled books.</span></div></div><div class="bd">
+   <h3>Omnistead</h3><div class="sw" aria-label="Working palette"><i style="background:#1D2420"></i><i style="background:#F3F0EA"></i><i style="background:#D9B46A"></i><i style="background:repeating-linear-gradient(45deg,#DDE1E6 0 6px,#F2F3F5 6px 12px)"></i></div>
+   <div class="ty"><span style="font-family:'Cabinet';font-weight:800;font-size:20px;color:var(--ink)">Mark to be designed</span><span>brief written</span></div>
+   <p class="vo">Voice: calm, exact, quietly confident, and trustworthy with money. Plain English, short sentences.</p>
+   <p class="assets">Name checked in UK, EU and US trade mark searches · brand brief for designers · trademark brief for an attorney · logo after filing</p></div></article>
  </div>
 </div></section>
 
 <section id="toolkit"><div class="wrap">
- <div class="head"><div><span class="kicker">Toolkit</span><h2>Languages, cloud and tools</h2></div><p>The languages and services behind the three ventures. Darker chips are the ones I use most.</p></div>
+ <div class="head rv"><div><span class="kicker">Toolkit</span><h2>Languages, cloud and tools</h2></div><p>Everything here is used in at least one of the projects above. Darker chips are the ones I use most.</p></div>
  <div class="kit">
-  <div class="grp"><h3>Languages</h3><div class="chips"><span class="k">TypeScript</span><span class="k">SQL (PostgreSQL, PL/pgSQL)</span><span class="k">JavaScript</span><span>HTML and CSS</span><span>Bash and zsh</span><span>Google Apps Script</span><span>YAML</span></div></div>
-  <div class="grp"><h3>Frameworks and libraries</h3><div class="chips"><span class="k">Next.js</span><span class="k">React</span><span>Tailwind CSS</span><span>Zod</span><span>Node.js</span><span>Deno</span><span>pnpm and Turborepo</span></div></div>
-  <div class="grp"><h3>Google Cloud and Workspace</h3><div class="chips"><span class="k">Vertex AI (Gemini)</span><span class="k">Workload identity federation</span><span>IAM and service accounts</span><span>London region (europe-west2)</span><span>Google Workspace</span><span>Sheets, Drive and Apps Script</span></div></div>
-  <div class="grp"><h3>Data, hosting and security</h3><div class="chips"><span class="k">Supabase</span><span class="k">PostgreSQL</span><span class="k">Row-level security</span><span>Vercel</span><span>Edge functions</span><span>Docker</span><span>Supabase CLI</span><span>Vercel CLI</span></div></div>
-  <div class="grp"><h3>Quality, delivery and monitoring</h3><div class="chips"><span class="k">GitHub Actions</span><span class="k">pgTAP</span><span>Playwright</span><span>Sentry</span><span>Git</span><span>Mailpit</span><span>Lighthouse</span></div></div>
-  <div class="grp"><h3>AI, SEO and growth</h3><div class="chips"><span class="k">Claude Code</span><span class="k">Prompt engineering</span><span>Copilot</span><span>Schema.org JSON-LD</span><span>Sitemaps</span><span>Plausible</span><span>Resend</span><span>SPF, DKIM, DMARC</span></div></div>
+  <div class="grp rv"><h3>Languages</h3><div class="chips"><span class="k">TypeScript</span><span class="k">SQL (PostgreSQL, PL/pgSQL)</span><span class="k">JavaScript</span><span>Python</span><span>HTML and CSS</span><span>Bash and zsh</span><span>Google Apps Script</span><span>YAML</span></div></div>
+  <div class="grp rv"><h3>Frameworks and libraries</h3><div class="chips"><span class="k">Next.js 15 and 16</span><span class="k">React 19</span><span>Fastify</span><span>Kysely</span><span>Zod</span><span>Tailwind CSS 4</span><span>GSAP</span><span>Node.js 22</span><span>Deno</span><span>pnpm and Turborepo</span></div></div>
+  <div class="grp rv"><h3>Cloud and hosting</h3><div class="chips"><span class="k">AWS (London)</span><span class="k">Google Cloud</span><span class="k">Vercel</span><span>Vertex AI</span><span>Cloud Storage</span><span>Workload identity federation</span><span>IAM</span><span>Docker</span></div></div>
+  <div class="grp rv"><h3>Data</h3><div class="chips"><span class="k">PostgreSQL 16 and 17</span><span class="k">Supabase</span><span class="k">Row-level security</span><span>pgvector</span><span>Edge functions</span><span>Upstash</span><span>Double-entry ledger</span><span>Transactional outbox</span></div></div>
+  <div class="grp rv"><h3>Identity and security</h3><div class="chips"><span class="k">WorkOS</span><span>Single sign-on, SAML, SCIM</span><span>Supabase Auth</span><span>Two-factor (TOTP)</span><span>Audit logs</span><span>SHA-256 manifests</span><span>Webhook signatures</span></div></div>
+  <div class="grp rv"><h3>Testing, delivery and monitoring</h3><div class="chips"><span class="k">Sentry</span><span class="k">GitHub Actions</span><span class="k">pgTAP</span><span>Vitest</span><span>Playwright</span><span>Lighthouse</span><span>Pino logs</span><span>Load testing</span><span>Git</span></div></div>
+  <div class="grp rv"><h3>Integrations and email</h3><div class="chips"><span class="k">Resend</span><span>Cal.com</span><span>Companies House API</span><span>Google Workspace</span><span>Mailpit</span><span>SPF, DKIM, DMARC</span><span>DNS (Vercel, GoDaddy, IONOS)</span></div></div>
+  <div class="grp rv"><h3>Documents and data files</h3><div class="chips"><span>react-pdf</span><span>docx (Word)</span><span>pdf-lib</span><span>unpdf</span><span>ExcelJS</span><span>CSV and zip streaming</span><span>sharp</span></div></div>
+  <div class="grp rv"><h3>AI, SEO and growth</h3><div class="chips"><span class="k">Claude Code</span><span class="k">Vertex AI (Gemini)</span><span>Prompt engineering</span><span>Scheduled build agents</span><span>Schema.org JSON-LD</span><span>Sitemaps</span><span>Open Graph</span><span>Plausible</span></div></div>
  </div>
  <p class="kit-note">Also from fifteen years in procurement: SAP Ariba, Oracle Procurement Cloud, Dynamics 365, Coupa, Ironclad, Tableau and advanced Excel.</p>
 </div></section>
 
 <section id="method"><div class="wrap">
- <div class="head"><div><span class="kicker">How I work</span><h2>AI agents as a delivery team</h2></div><p>I write the brief and the rules; AI build agents write code under my direction; tests and a person decide what ships. I read, review and approve every change.</p></div>
- <ol class="loop">
+ <div class="head rv"><div><span class="kicker">How I work</span><h2>AI agents as a delivery team</h2></div><p>I write the brief and the rules; AI build agents write code under my direction; tests and a person decide what ships. Accounts, payments and production keys stay with me.</p></div>
+ <ol class="loop rv">
   <li><b>I write the brief</b><span>Scope, acceptance criteria and the rules the system must never break.</span></li>
-  <li><b>An agent plans</b><span>Plan first. Nothing is built until I approve it.</span></li>
+  <li><b>An agent plans</b><span>Plan first, decisions recorded as notes I can reverse.</span></li>
   <li><b>Tests decide</b><span>Unit, database, isolation and layout tests gate every merge.</span></li>
-  <li><b>I approve and ship</b><span>Review, deploy, confirm live. Rollback is one command.</span></li>
+  <li><b>Ship and watch</b><span>Deploy, smoke-check production, and watch Sentry.</span></li>
   <li><b>Write it down</b><span>Handovers, runbooks and an operating bible for each business.</span></li>
  </ol>
- <div class="rules">
+ <div class="rules rv">
   <div class="rule"><b>AI proposes, people decide</b><span>AI can read a bill and suggest values. It cannot write to the database. A person confirms; a second person checks.</span></div>
   <div class="rule"><b>Live data changes, safely</b><span>A read-only check first, a dry run, a backup and a rollback file, and the database always updated before the code that uses it.</span></div>
   <div class="rule"><b>No secrets in the open</b><span>Keys live only in platform settings, and Google Cloud is reached without stored keys at all.</span></div>
@@ -362,8 +580,8 @@ footer{padding:40px 0 64px}
 </div></section>
 
 <section id="background"><div class="wrap">
- <div class="head"><div><span class="kicker">Background</span><h2>Where the discipline comes from</h2></div><p>Fifteen years of buying technology, managing vendors and negotiating contracts taught me what good systems need: clear specifications, measurable service levels, and evidence behind every number.</p></div>
- <div class="bg">
+ <div class="head rv"><div><span class="kicker">Background</span><h2>Where the discipline comes from</h2></div><p>Fifteen years of buying technology, managing vendors and negotiating contracts taught me what good systems need: clear specifications, measurable service levels, and evidence behind every number.</p></div>
+ <div class="bg rv">
   <div>
    <p class="lead">Before building my own ventures, I led procurement and supply chain work across global life sciences, medical devices, manufacturing and banking, in teams spanning EMEA, North America and Asia Pacific.</p>
    <ul class="hl">
@@ -382,17 +600,17 @@ footer{padding:40px 0 64px}
 </div></section>
 
 <section id="film"><div class="wrap">
- <div class="head"><div><span class="kicker">Film</span><h2>The 36-second version</h2></div><p>A motion piece I directed to tell this story quickly. Sound on.</p></div>
- <div class="film"><video controls playsinline preload="metadata" poster="poster.jpg?v=8" src="film.mp4?v=8" aria-label="36-second film about Temi Ogunfusika’s work"></video></div>
+ <div class="head rv"><div><span class="kicker">Film</span><h2>The 36-second version</h2></div><p>A motion piece I directed to tell this story quickly. Sound on.</p></div>
+ <div class="film rv"><video controls playsinline preload="metadata" poster="poster.jpg?v=9" src="film.mp4?v=9" aria-label="36-second film about Temi Ogunfusika’s work"></video></div>
 </div></section>
 
 <section id="contact" style="border-top:0;padding-top:24px"><div class="wrap">
- <div class="contact">
+ <div class="contact rv">
   <div><h2>Hiring for AI or IT work?</h2>
-   <p>I’m open to roles where brand, platform and AI automation meet, and to building with founders who need all three.</p>
-   <div class="roles"><span>AI automation</span><span>Solutions architecture</span><span>AI product</span><span>Digital transformation</span><span>Technical programme lead</span><span>IT and SaaS vendor management</span></div>
+   <p>I’m open to roles where brand, platform and AI automation meet, and to building with founders and firms who need all three.</p>
+   <div class="roles"><span>AI automation</span><span>Solutions architecture</span><span>Full-stack engineering</span><span>AI product</span><span>Digital transformation</span><span>Technical programme lead</span><span>IT and SaaS vendor management</span></div>
   </div>
-  <div class="links"><a class="cta" href="mailto:me@temifusika.com">me@temifusika.com</a><a href="https://seerconsult.com" target="_blank" rel="noopener">seerconsult.com</a><a href="https://venuralink.com" target="_blank" rel="noopener">venuralink.com</a><span style="color:#9AA3B2">Bedford, UK</span></div>
+  <div class="links"><a class="cta" href="mailto:me@temifusika.com">me@temifusika.com</a><a href="https://seerconsult.com" target="_blank" rel="noopener">seerconsult.com</a><a href="https://venuralink.com" target="_blank" rel="noopener">venuralink.com</a><a href="https://github.com/temifusika" target="_blank" rel="noopener">github.com/temifusika</a><span style="color:#9AA3B2">Bedford, UK</span></div>
  </div>
 </div></section>
 </main>
@@ -401,7 +619,7 @@ footer{padding:40px 0 64px}
  <div class="tb" aria-label="Page details">
   <div><span>Drawn by</span><b>Temi Ogunfusika</b></div>
   <div><span>Sheet</span><b>temifusika.com</b></div>
-  <div><span>Revised</span><b>18 Oct 2026</b></div>
+  <div><span>Revised</span><b>24 Oct 2026</b></div>
   <div><span>Contact</span><b><a href="mailto:me@temifusika.com">me@temifusika.com</a></b></div>
  </div>
 </div></footer>
@@ -410,11 +628,11 @@ footer{padding:40px 0 64px}
 const STACK={
  se:{acc:'#3D5AFE',status:'<i class="dot" style="background:#C6FF3D"></i>Live · seerconsult.com',link:'https://seerconsult.com',layers:[
   ['Brand','Eye mark and “We see what’s next.” One token source feeds the site and the app.',['Design tokens','Cabinet · Switzer','Film in 5 formats']],
-  ['Product','Evidence Ledger, carbon report, compliance calendar, plan builder and tender answers.',['Next.js','React','TypeScript','Zod']],
-  ['Data and security','Postgres in London. Row-level security per company; a second person must check each entry.',['Supabase','RLS','Audit log','pgTAP']],
-  ['AI and automation','Gemini reads bills in London and a person confirms. The Guardrail blocks untraced figures.',['Vertex AI','Guardrail','Daily job']],
-  ['Cloud and operations','Keyless Google Cloud access from Vercel. Errors, cron and uptime watched by Sentry.',['Workload identity','Vercel','Sentry','GitHub Actions']],
-  ['Growth and search','Fast static marketing pages, lead capture, an estimator and a launch campaign.',['Lighthouse','Lead capture','Campaign']]]},
+  ['Product','Evidence Ledger, SECR statements, group footprints, plan builder, tender answers and exports.',['Next.js 15','TypeScript','react-pdf','docx']],
+  ['Data and security','Postgres in London with row-level security per company, two-factor sign-in and an audit log.',['Supabase','RLS','pgTAP ×107','2FA']],
+  ['AI and automation','Gemini reads bills in London and a person confirms. The Guardrail blocks untraced figures.',['Vertex AI','Guardrail','Daily jobs']],
+  ['Cloud and operations','Keyless Google Cloud access, nightly backups with SHA-256 checks, Sentry cron check-ins.',['Workload identity','Cloud Storage','Sentry','GitHub Actions']],
+  ['Performance','Load tested at 50,000 entries and 300 sites; plan builds cut from 2.7 s to 1.6 s.',['Load test','Fingerprints','Upstash']]]},
  vl:{acc:'#008751',status:'<i class="dot" style="background:#7FD3AE"></i>Live · venuralink.com',link:'https://venuralink.com',layers:[
   ['Brand','Pin-and-chain mark, navy, emerald and copper, and the Verified stamp.',['Playfair · Inter','Sales pack','Film in 4 formats']],
   ['Product','Directory, shortlists, host and vendor editors, admin review queue and a tested booking flow.',['JavaScript','HTML · CSS','Vercel']],
@@ -422,23 +640,32 @@ const STACK={
   ['AI and automation','Branded emails from edge functions; outreach pipelines in Apps Script; bulk import.',['Deno','Apps Script','Resend']],
   ['Cloud and operations','Backups and rollback files before every live data change; a runbook for every command.',['Supabase CLI','Git','Prompt Bible']],
   ['Growth and search','Structured data on every listing, a generated sitemap and seven conversion goals.',['JSON-LD','Sitemap','Plausible','SPF · DKIM · DMARC']]]},
- nil:{acc:'#F2E14C',status:'In development · foundation phase',link:'#work',layers:[
-  ['Brand','Name, line and brand brief done: “Nil. Because 1\u00a0>\u00a02.” Logo waits for legal clearance.',['Brand brief','Trademark brief']],
-  ['Product','Contracts, approvals, invoicing, payments and books of record in one system.',['Node 22','TypeScript','pnpm']],
-  ['Data and security','60 tables, 70 row-level security policies, composite tenant keys and a hash-sealed audit log.',['PostgreSQL 16','RLS','Double entry']],
-  ['AI and automation','Clause extraction with human review and a transactional outbox, designed in from day one.',['Outbox','Human review','pgvector']],
-  ['Cloud and operations','104 schema checks pass on a fresh database every run; decisions recorded as ADRs.',['GitHub Actions','Bash','ADRs']],
-  ['Go to market','UK professional-services firms of 20 to 200 people; HMRC Making Tax Digital planned.',['UK first','MTD']]]}};
+ om:{acc:'#D9B46A',status:'In development · Phase 0 foundation',link:'#work',layers:[
+  ['Brand','“One home for everything your firm runs on.” Name checked in trade mark searches; mark after filing.',['Brand brief','Trademark brief']],
+  ['Product','29 business functions, from client onboarding and contracts to invoices, VAT and the books.',['TypeScript','Fastify','Kysely','Zod']],
+  ['Data and security','60 tables, 70 row-level security policies, a double-entry ledger and an audit log.',['PostgreSQL 16','RLS','numeric(19,4)']],
+  ['Identity','17 access roles assigned in WorkOS and checked by the database; enterprise sign-in per customer.',['WorkOS','SSO · SAML · SCIM']],
+  ['Cloud and operations','AWS in London. 104 schema checks and isolation tests run on every change in CI.',['AWS eu-west-2','GitHub Actions','Vitest','Docker']],
+  ['AI and automation','A daily AI build session that merges only on green; contract review by AI, with a person deciding, is planned.',['Scheduled agent','Outbox','Human review']]]},
+ fh:{acc:'#B4436C',status:'<i class="dot" style="background:#F3D9DF"></i>Live · fabhands.co.uk',link:'https://www.fabhands.co.uk',layers:[
+  ['Brand','Plum, rose and gold, real client photography only, and the monogram used throughout.',['Monogram','GSAP motion']],
+  ['Product','Marketing site, portfolio with filters, online booking and a contact form.',['Next.js 16','React 19','Tailwind 4']],
+  ['Data and security','Enquiries and bookings saved with row-level security; server-only access.',['Supabase','RLS','Zod']],
+  ['Automation','Booking webhooks, signature-verified, send branded emails with calendar invites.',['Cal.com','Resend','.ics']],
+  ['Cloud and operations','Deployed on Vercel; failed email sends logged instead of failing silently.',['Vercel','Logs']],
+  ['Growth and search','Fast on mobile, Open Graph image, sitemap and robots, Bedford, MK and London copy.',['SEO','Open Graph','DMARC']]]}};
 const ol=document.getElementById('layers'),st=document.getElementById('sf-status'),sl=document.getElementById('sf-link'),tabs=[...document.querySelectorAll('.tabs [role=tab]')];
 const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 function show(p,focus){const d=STACK[p];
- tabs.forEach(t=>{const on=t.dataset.p===p;t.setAttribute('aria-selected',on);t.tabIndex=on?0:-1;if(on&&focus)t.focus()});
+ tabs.forEach(t=>{const on=t.dataset.p===p;t.setAttribute('aria-selected',on);t.tabIndex=on?0:-1;if(on&&focus){t.focus();t.scrollIntoView({block:'nearest',inline:'nearest'})}});
  ol.setAttribute('aria-labelledby','tab-'+p);
  ol.innerHTML=d.layers.map((l,i)=>`<li class="layer in" style="--acc:${d.acc};animation-delay:${i*45}ms"><div class="nm">${esc(l[0])}</div><div><div class="tx">${esc(l[1])}</div><div class="ch">${l[2].map(c=>`<span>${esc(c)}</span>`).join('')}</div></div></li>`).join('');
- st.innerHTML=d.status;sl.href=d.link;sl.textContent=p==='nil'?'Read the case':'Visit the site';
- if(p!=='nil'){sl.target='_blank';sl.rel='noopener'}else{sl.removeAttribute('target')}}
+ st.innerHTML=d.status;sl.href=d.link;const ext=d.link.startsWith('http');sl.textContent=ext?'Visit the site':'Read the case';
+ if(ext){sl.target='_blank';sl.rel='noopener'}else{sl.removeAttribute('target')}}
 tabs.forEach((t,i)=>{t.addEventListener('click',()=>show(t.dataset.p));t.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();const n=tabs[(i+(e.key==='ArrowRight'?1:-1)+tabs.length)%tabs.length];show(n.dataset.p,true)}})});
 show('se');
+const rv=document.querySelectorAll('.rv');
+if('IntersectionObserver' in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});rv.forEach(el=>io.observe(el))}else{rv.forEach(el=>el.classList.add('on'))}
 </script>
 </body>
 </html>
