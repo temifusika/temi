@@ -58,11 +58,12 @@ function drum(el, base, R, spacing = .36, dim = .4) {
 
 // ---------- intro: Hello. I'm Temi. ----------
 const intro = $('#intro');
-let introOn = !reduce && !store.get('temi-intro') && !location.hash, introT0 = 0, heroStart = 0, skipAt = null;
+const navType = (performance.getEntriesByType && performance.getEntriesByType('navigation')[0] || {}).type;
+let introOn = !reduce && !location.hash && navType !== 'back_forward', introT0 = 0, heroStart = 0, skipAt = null;
 const iw = [$('#iw1'), $('#iw2')];
 iw.forEach(e => { const dot = e.querySelector('.odot'); const txt = e.firstChild.textContent; e.innerHTML = [...txt].map(c => `<span class="l">${c === ' ' ? '&nbsp;' : c}</span>`).join(''); e.appendChild(dot); });
 if (introOn) {
-  store.set('temi-intro', '1'); document.documentElement.style.overflow = 'hidden'; heroStart = 2.2;
+  history.scrollRestoration = 'manual'; scrollTo(0, 0); document.documentElement.style.overflow = 'hidden'; heroStart = 2.2;
   const skip = () => { if (skipAt === null && T - introT0 < 2.05) skipAt = T; };
   ['click', 'keydown', 'wheel', 'touchstart'].forEach(ev => addEventListener(ev, skip, { passive: true, once: true }));
 } else { intro.classList.add('gone'); }
@@ -339,7 +340,7 @@ const contact = $('#contact'), cRings = $('#contact .rings'), lets = $('#lets');
 { const dot = lets.querySelector('.odot'); lets.innerHTML = [...lets.firstChild.textContent].map(c => `<span class="l">${c === ' ' ? '&nbsp;' : c}</span>`).join(''); lets.appendChild(dot); }
 function contactDraw() {
   const r = contact.getBoundingClientRect(); if (r.bottom < 0 || r.top > H) return;
-  drum(openW, stepBase(T * .7), openW.offsetHeight * .4, .42);
+  drum(openW, stepBase(T * .7), openW.offsetHeight * (phone() ? .34 : .4), phone() ? .55 : .42);
   ringsSVG(cRings, r.width, r.height, r.width * (narrow() ? .5 : .72), r.height * (narrow() ? .78 : .5), Math.min(r.width, r.height) * 1.05, -T * .7);
   const d = visT(lets);
   $$('.l', lets).forEach((l, i) => { const p = d < 0 ? 0 : reduce ? 1 : eB(P(d, i * .05, .5)); l.style.transform = `translateY(${(1 - p) * 60}%) rotate(${(1 - p) * 8}deg)`; l.style.opacity = clamp(p * 2); });
