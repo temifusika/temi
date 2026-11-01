@@ -304,12 +304,13 @@ function brandsDraw() {
       const w = q('.b-wm'); w.style.opacity = o(wm); w.style.clipPath = `inset(0 ${100 - wm * 100}% 0 0)`;
       q('.b-lab').style.opacity = o(eOut(P(lt, 2.5, .4)));
     } else if (k === 1) {
-      const dr = ease(P(lt, .1, .6)), fill = eOut(P(lt, .6, .25)), one = eB(P(lt, .75, .4)), roof = q('.roof'), on = q('.one');
-      q('.b-omni').style.opacity = o(1); roof.style.strokeDashoffset = 1 - dr; roof.style.fillOpacity = fill;
-      on.style.transform = `translateY(${(1 - one) * -12}px)`; on.style.opacity = clamp(one * 3);
+      const disc = eB(P(lt, 0, .45)), rg = ease(P(lt, .2, .7)), dr = ease(P(lt, .35, .55)), fill = eOut(P(lt, .8, .25)), one = eB(P(lt, .95, .4)), roof = q('.roof'), on = q('.one');
+      q('.b-omni').style.opacity = o(1); q('.disc').style.transform = `scale(${disc})`; q('.ring').style.strokeDashoffset = 1 - rg;
+      roof.style.strokeDashoffset = 1 - dr; roof.style.fillOpacity = fill;
+      on.style.transform = `translateY(${(1 - one) * -60}%)`; on.style.opacity = clamp(one * 3);
       const ow = q('.b-ow'); ow.style.opacity = o(1);
-      ow.querySelectorAll('.ol').forEach((c, i) => { const p = eB(P(lt, 1.05 + i * .06, .35)); c.style.opacity = clamp(p * 2); c.style.transform = i === 4 ? `translateY(${(1 - p) * -160}%) scale(${p})` : `translateY(${(1 - p) * 60}%)`; });
-      q('.b-lab').style.opacity = o(eOut(P(lt, 1.8, .4)));
+      ow.querySelectorAll('.ol').forEach((c, i) => { const p = eB(P(lt, 1.3 + i * .06, .35)); c.style.opacity = clamp(p * 2); c.style.transform = i === 4 ? `translateY(${(1 - p) * -160}%) scale(${p})` : `translateY(${(1 - p) * 60}%)`; });
+      q('.b-lab').style.opacity = o(eOut(P(lt, 2.1, .4)));
     } else if (k === 2) {
       const fall = P(lt, 0, .4), b = lt > .4 ? Math.sin(P(lt, .4, .32) * Math.PI) * -22 * (1 - P(lt, .4, .32)) : 0, sq = lt > .4 && lt < .58 ? 1 - .14 * Math.sin(P(lt, .4, .18) * Math.PI) : 1, sw = eOut(P(lt, 1.5, .5));
       const pin = q('.b-pin'); pin.style.opacity = o(1 - sw); pin.style.transform = `translateY(${lt < .4 ? (1 - eOut(fall)) * -320 : b}px) scale(${1 / sq},${sq})`;
