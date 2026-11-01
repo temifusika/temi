@@ -254,7 +254,7 @@ function workDraw() {
 // ---------- brief ----------
 const BRIEFS = [
   { q: 'Build a carbon reporting platform UK suppliers can prove in a tender.', rows: ['Name, mark and voice: “checked”, never “verified”', 'Evidence ledger, plan writer, PDF and Word statements', 'Row-level security per company; a second person checks', 'Vertex AI reads bills; a person confirms every value', 'London region, nightly backups, Sentry on every job', 'Fast static pages, an estimator, structured data'], built: ['Built: Scopterra', 'https://scopterra.com'] },
-  { q: 'One system to run a professional-services firm, from contract to books.', rows: ['Omnistead: “where 1 > many”, a brief and trademark checks', 'Contracts, invoicing, projects, bids, procurement, payroll', '150+ tables, row-level security per firm, double-entry ledger', 'AI contract review against the firm’s own risk rules', 'AWS in London as code: ECS, RDS, KMS, SES; WorkOS SSO', 'Early access for UK firms; accountants invited'], built: ['Building: Omnistead', 'https://omnistead.io'] },
+  { q: 'One system to run a professional-services firm, from contract to books.', rows: ['Omnistead: “The Power of One”, a brief and trademark checks', '15 suites on one record: contracts, money, tax, payroll', '150+ tables, row-level security per firm, double-entry ledger', 'AI contract review against the firm’s own risk rules', 'AWS in London as code: ECS, RDS, KMS, SES; WorkOS SSO', 'Early access open to the first UK firms'], built: ['Building: Omnistead', 'https://omnistead.io'] },
   { q: 'A trusted marketplace for event venues and vendors in Nigeria.', rows: ['Pin-and-chain mark, the Verified stamp, a launch film', 'Directory, shortlists, editors, a tested booking flow', 'Staff roles enforced in the database; NDPA 2023 terms', 'Outreach pipelines in Apps Script; branded emails', 'Edge functions, backups before every live change', 'Structured data on every listing, sitemap, 7 goals'], built: ['Built: Venuralink', 'https://venuralink.com'] },
   { q: 'A booking site for a makeup artist, enquiries straight to her inbox.', rows: ['Plum, rose and gold, real client photography only', 'Next.js 16 site, portfolio filters, Cal.com booking', 'Enquiries and bookings locked down with row-level security', 'Signed webhooks send confirmations with calendar invites', 'Vercel, logged failures, deliverability fixed', 'Fast on mobile, Open Graph image, sitemap'], built: ['Built: Fabhands', 'https://www.fabhands.co.uk'] },
 ];
@@ -307,8 +307,8 @@ function brandsDraw() {
       const dr = ease(P(lt, .1, .6)), fill = eOut(P(lt, .6, .25)), one = eB(P(lt, .75, .4)), roof = q('.roof'), on = q('.one');
       q('.b-omni').style.opacity = o(1); roof.style.strokeDashoffset = 1 - dr; roof.style.fillOpacity = fill;
       on.style.transform = `translateY(${(1 - one) * -12}px)`; on.style.opacity = clamp(one * 3);
-      const wd = q('.b-word'); if (!wd.dataset.split) { wd.innerHTML = [...wd.textContent].map(c => `<span>${c}</span>`).join(''); wd.dataset.split = 1; }
-      wd.style.opacity = o(1); [...wd.children].forEach((c, i) => { const p = eB(P(lt, 1.05 + i * .06, .35)); c.style.opacity = clamp(p); c.style.transform = `translateY(${(1 - p) * 30}px)`; });
+      const ow = q('.b-ow'); ow.style.opacity = o(1);
+      ow.querySelectorAll('.ol').forEach((c, i) => { const p = eB(P(lt, 1.05 + i * .06, .35)); c.style.opacity = clamp(p * 2); c.style.transform = i === 4 ? `translateY(${(1 - p) * -160}%) scale(${p})` : `translateY(${(1 - p) * 60}%)`; });
       q('.b-lab').style.opacity = o(eOut(P(lt, 1.8, .4)));
     } else if (k === 2) {
       const fall = P(lt, 0, .4), b = lt > .4 ? Math.sin(P(lt, .4, .32) * Math.PI) * -22 * (1 - P(lt, .4, .32)) : 0, sq = lt > .4 && lt < .58 ? 1 - .14 * Math.sin(P(lt, .4, .18) * Math.PI) : 1, sw = eOut(P(lt, 1.5, .5));
