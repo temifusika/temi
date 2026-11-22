@@ -117,7 +117,7 @@ p{margin:0}
 .mono{font:400 12px/1.6 var(--mono)}
 
 /* layer stage */
-#layers{height:640vh;padding:0}
+#layers{height:430vh;padding:0}
 .sticky{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
 .stage{position:absolute;inset:0;max-width:1200px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.86fr);align-items:center;gap:56px}
 .cardslot{position:relative;height:440px;margin-left:clamp(0px,6vw,100px)}
@@ -268,7 +268,7 @@ p{margin:0}
 .wheel div.on{font-weight:600}
 
 /* skills: wheel + evidence */
-#skills{height:340vh;padding:0}
+#skills{height:250vh;padding:0}
 .skwrap{position:relative;height:100%;max-width:1200px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1fr);align-items:center;gap:40px}
 .skleft .eyebrow{margin-bottom:6px}
 .skwheel{position:relative;height:56vh;perspective:1200px}
@@ -419,6 +419,51 @@ header.top.dark .pill{background:#fff;color:var(--blue);border-color:#fff}
 header.top.dark .menubtn{background:#fff;color:var(--blue);border-color:#fff}
 @media (max-width:1000px){.menubtn{display:inline-flex}header.top .pill{display:none}}
 @media (min-width:1001px){.mnav{display:none!important}}
+
+/* ===== uplift 22 Nov: nav, agents board, record charts, interactions ===== */
+nav.main{position:relative;background:rgba(255,255,255,.62);border:1px solid var(--line);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);gap:4px;padding:4px}
+nav.main a{position:relative;z-index:1;color:var(--ink2);font-size:13.5px;padding:8px 12px;border-radius:999px;transition:color .2s}
+nav.main a.on{color:var(--ink)}
+.navind{position:absolute;top:4px;bottom:4px;left:0;width:0;border-radius:999px;background:#fff;box-shadow:0 1px 2px rgba(17,17,19,.08),0 4px 14px rgba(17,17,19,.08);transition:left .35s cubic-bezier(.2,.8,.2,1),width .35s cubic-bezier(.2,.8,.2,1),opacity .2s;opacity:0}
+header.top.dark nav.main{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.25)}
+header.top.dark nav.main a{color:rgba(255,255,255,.88)}header.top.dark nav.main a.on{color:var(--blue)}
+.agents{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.2fr);gap:56px;align-items:center}
+.aboard{padding:0;overflow:hidden}
+.aboard .seg{display:inline-flex;padding:3px;border-radius:999px;background:rgba(17,17,19,.06)}
+.aboard .seg button{border:0;background:transparent;font:600 11px/1 var(--mono);padding:6px 10px;border-radius:999px;color:var(--mute);cursor:pointer}
+.aboard .seg button[aria-pressed="true"]{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(17,17,19,.14)}
+.acols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding:14px}
+.acols.list{grid-template-columns:1fr}.acols.list .acol h4{display:none}
+.acol{background:rgba(17,17,19,.035);border-radius:16px;padding:10px;min-height:260px;display:flex;flex-direction:column;gap:8px}
+.acols.list .acol{min-height:0}
+.acol h4{margin:2px 4px 4px;font:600 10.5px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--mute);display:flex;justify-content:space-between}
+.acol h4 em{font-style:normal;background:rgba(17,17,19,.07);border-radius:6px;padding:2px 6px}
+.aitems{display:flex;flex-direction:column;gap:8px}
+.acard{background:#fff;border-radius:12px;padding:11px 12px;box-shadow:0 1px 2px rgba(17,17,19,.06),0 6px 16px rgba(17,17,19,.06);animation:aIn .45s cubic-bezier(.2,.8,.2,1) both}
+.acard b{display:block;font:600 13px/1.3 var(--sans);color:var(--ink)}
+.acard p{margin:4px 0 0;font-size:12px;line-height:1.4;color:var(--ink2)}
+.acard .am{display:flex;align-items:center;gap:6px;margin-top:8px;font:500 10.5px/1.2 var(--mono);color:var(--mute);white-space:nowrap;overflow:hidden}.acard .am span{overflow:hidden;text-overflow:ellipsis}
+.acard .am i{width:7px;height:7px;border-radius:50%;background:var(--c,#999)}
+.acard .run i{animation:pulse 1.2s ease-in-out infinite}
+.acard .bar{height:4px;border-radius:2px;background:rgba(17,17,19,.07);margin-top:8px;overflow:hidden}.acard .bar s{display:block;height:100%;width:var(--w,0%);background:var(--c);transition:width .8s ease;text-decoration:none}
+.acard .ok{margin-left:auto;border:0;background:var(--ink);color:#fff;font:600 10.5px/1 var(--sans);padding:6px 9px;border-radius:999px;cursor:pointer}
+@keyframes aIn{from{opacity:0;transform:translateY(8px) scale(.98)}to{opacity:1;transform:none}}
+@keyframes pulse{50%{opacity:.35;transform:scale(.7)}}
+.record .rviz{border-top:0;padding-top:0}
+.rviz{margin-top:14px;height:34px;display:flex;align-items:flex-end;gap:2px}
+.rviz.dots{flex-wrap:wrap;height:auto;gap:3px;max-width:240px}
+.rviz.dots i{width:7px;height:7px;border-radius:2px;background:var(--c);opacity:.18;transition:opacity .3s}
+.rviz.dots i.on{opacity:1}
+.rviz.bars i{flex:1;background:var(--c);border-radius:2px 2px 0 0;height:4%;transition:height .9s cubic-bezier(.2,.8,.2,1)}
+.rviz.seg{height:12px;align-items:stretch;gap:3px}.rviz.seg i{flex:1;border-radius:3px;background:var(--c);opacity:.18;transition:opacity .3s}.rviz.seg i.on{opacity:1}
+.rviz small{font:500 10px/1 var(--mono);color:var(--mute);margin-left:8px;align-self:center;white-space:nowrap}
+.pill.ghostw{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.55);cursor:pointer;font:inherit}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);opacity:0;background:var(--ink);color:#fff;font:600 13px/1 var(--sans);padding:12px 16px;border-radius:999px;z-index:60;transition:all .3s cubic-bezier(.2,.8,.2,1);pointer-events:none}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+.case{transition:transform .25s ease,box-shadow .25s ease;transform-style:preserve-3d}
+.mag{transition:transform .2s ease}
+@media (max-width:1000px){.agents{grid-template-columns:1fr;gap:28px}.acols{grid-template-columns:1fr}.acol{min-height:0}#layers{height:auto}#skills{height:auto}}
+@media (prefers-reduced-motion:reduce){.acard,.navind,.rviz *{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
@@ -427,7 +472,7 @@ header.top.dark .menubtn{background:#fff;color:var(--blue);border-color:#fff}
 
 <header class="top" id="hdr"><div class="wrap">
  <a class="logo" href="#top"><svg viewBox="0 0 22 16" aria-hidden="true"><path d="M2 14 8 2 14 14Z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 8 21 4" stroke="#FF3B30" stroke-width="1.6"/><path d="M12.4 9 21 9" stroke="#34C759" stroke-width="1.6"/><path d="M12.8 10 21 14" stroke="#8E5CF7" stroke-width="1.6"/></svg>TEMI OGUNFUSIKA</a>
- <nav class="main" aria-label="Sections"><a href="#layers">Layers</a><a href="#work">Work</a><a href="#brands">Brands</a><a href="#skills">Skills</a><a href="#concepts">Concepts</a><a href="#toolkit">Toolkit</a><a href="#film">Film</a><a href="/agents/">Agents</a></nav>
+ <nav class="main" id="mainnav" aria-label="Sections"><span class="navind" aria-hidden="true"></span><a href="#layers">Layers</a><a href="#work">Work</a><a href="#brands">Brands</a><a href="#skills">Skills</a><a href="#concepts">Concepts</a><a href="#toolkit">Toolkit</a><a href="#film">Film</a><a href="/agents/">Agents</a></nav>
  <button class="menubtn" id="menubtn" type="button" aria-expanded="false" aria-controls="mnav"><span></span><span></span><span></span><b>Menu</b></button>
  <nav class="mnav" id="mnav" aria-label="Menu" hidden><a href="#layers">Layers</a><a href="#work">Work</a><a href="#brands">Brands</a><a href="#skills">Skills</a><a href="#concepts">Concepts</a><a href="#toolkit">Toolkit</a><a href="#film">Film</a><a href="/agents/">Agents</a><a href="mailto:me@temifusika.com">Email me</a></nav>
  <a class="pill" href="mailto:me@temifusika.com">Email me →</a>
@@ -568,6 +613,23 @@ header.top.dark .menubtn{background:#fff;color:var(--blue);border-color:#fff}
  </div><div class="gfoot"><span>brand → product → data → AI → cloud → growth</span><span>one person</span></div></div>
 </div></section>
 
+<section id="agents"><div class="wrap agents">
+ <div>
+  <div class="eyebrow rv"><i style="background:var(--v)"></i>How it gets built</div>
+  <h2 class="rv">An AI team,<br><span class="it">run like an office.</span></h2>
+  <p class="lede rv">Twenty-one AI agents build, check and ship across two companies. Builders write the code, checkers merge only what passes every test, and nothing reaches customers without a person's yes.</p>
+  <div class="btns rv"><a class="pill mag" href="/agents/">Open the office →</a></div>
+ </div>
+ <div class="glass rv aboard" id="aboard" style="--edge:rgba(142,92,247,.28)">
+  <div class="ghead"><b><i style="background:var(--v)"></i>Agents</b><span class="seg" role="group" aria-label="View"><button type="button" aria-pressed="true">Board</button><button type="button" aria-pressed="false">List</button></span></div>
+  <div class="acols" id="acols">
+   <div class="acol"><h4>Needs you <em id="nN">1</em></h4><div class="aitems" data-col="needs"></div></div>
+   <div class="acol"><h4>Running <em id="nR">2</em></h4><div class="aitems" data-col="run"></div></div>
+   <div class="acol"><h4>Done <em id="nD">1</em></h4><div class="aitems" data-col="done"></div></div>
+  </div>
+  <div class="gfoot"><span>builders → checkers → you</span><span>illustrative</span></div>
+ </div>
+</div></section>
 <section id="work"><div class="hsticky">
  <div class="whead"><div><div class="eyebrow"><i style="background:var(--g)"></i>Current work</div><h2>Four platforms,<br><span class="it">built end to end.</span></h2></div><div class="wprog" aria-hidden="true"><svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="19" fill="none" stroke="rgba(0,0,0,.1)" stroke-width="2"/><circle id="wring" cx="22" cy="22" r="19" fill="none" stroke="#111" stroke-width="2" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" transform="rotate(-90 22 22)"/></svg><span id="wnum">01 / 04</span></div></div>
  <div class="track" id="track">
@@ -777,13 +839,13 @@ header.top.dark .menubtn{background:#fff;color:var(--blue);border-color:#fff}
   <h2 class="lets" id="lets" aria-label="Let's build.">Let's build<span class="odot"></span></h2>
   <p class="lede">Brand, platform and AI automation, built end to end by one person.</p>
   <div class="creds stagger"><span><b>MSc</b>Cranfield School of Management</span><span><b>MCIPS</b>Chartered</span><span><b>BSc</b>Microbiology</span><span><b>340+</b>PRs merged</span><span><b>4</b>platforms shipped</span></div>
-  <div class="btns"><a class="pill white" href="mailto:me@temifusika.com">me@temifusika.com →</a></div>
+  <div class="btns"><a class="pill white mag" href="mailto:me@temifusika.com">me@temifusika.com →</a><button type="button" class="pill ghostw" id="copymail">Copy email</button></div>
   <div class="links"><a href="https://scopterra.com" target="_blank" rel="noopener">scopterra.com</a><a href="https://omnistead.io" target="_blank" rel="noopener">omnistead.io</a><a href="https://venuralink.com" target="_blank" rel="noopener">venuralink.com</a><a href="https://github.com/temifusika" target="_blank" rel="noopener">GitHub</a><a href="Temi_Ogunfusika_Tech_Pack.pdf?v=20" target="_blank" rel="noopener">Tech pack (PDF)</a></div>
  </div>
  <div class="openwheel" id="openwheel" aria-label="Open to roles in"><span class="cap">Open to</span></div>
 </div></section>
 </main>
-<footer><span>Temi Ogunfusika · Bedford, UK</span><span>Revised 1 Nov 2026</span><span>temifusika.com</span></footer>
+<footer><span>Temi Ogunfusika · Bedford, UK</span><span>Revised 22 Nov 2026</span><span>temifusika.com</span></footer>
 
 <script type="module" src="assets/js/site.js?v=20"></script>
 <noscript><style>#intro{display:none}.lcard,.lhead,.skill{position:relative!important;opacity:1!important}#layers,#skills{height:auto}.sticky{position:relative;height:auto}.stage{position:relative}.cardslot,.headslot,.skpanel{height:auto}.cards{position:relative}</style></noscript>
@@ -794,6 +856,52 @@ b.addEventListener('click',function(){set(m.hidden);});
 m.addEventListener('click',function(e){if(e.target.closest('a'))set(false);});
 document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});
 document.addEventListener('click',function(e){if(!m.hidden&&!e.target.closest('#mnav,#menubtn'))set(false);});})();
+</script>
+<script>
+(function(){
+var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+// 1. nav: highlight the section in view with a sliding pill
+var nav=document.getElementById('mainnav'),ind=nav&&nav.querySelector('.navind');
+if(nav){var links=[].slice.call(nav.querySelectorAll('a[href^="#"]'));
+ function move(a){if(!a){ind.style.opacity=0;return;}ind.style.opacity=1;ind.style.left=a.offsetLeft+'px';ind.style.width=a.offsetWidth+'px';links.forEach(function(l){l.classList.toggle('on',l===a);});}
+ function pick(){var y=innerHeight*.35,cur=null;links.forEach(function(l){var t=document.querySelector(l.getAttribute('href'));if(!t)return;var r=t.getBoundingClientRect();if(r.top<=y&&r.bottom>y)cur=l;});move(cur);}
+ addEventListener('scroll',pick,{passive:true});addEventListener('resize',pick);setTimeout(pick,300);}
+// 4. agents board: cards move from Running to Done, a new one needs you
+var board=document.getElementById('acols');
+if(board){var col=function(n){return board.querySelector('[data-col="'+n+'"]');};
+ var C=['var(--b)','var(--g)','var(--o)','var(--v)','var(--r)','var(--y)'];
+ var JOBS=[['Lead builder','New inbox, three panes'],['Payroll builder','Paged lists for every run'],['Release builder','Release checks and a runbook'],['App builder','Second-person check emails'],['Site builder','FAQ: single sign-on'],['Code reviewer','Today\u2019s review notes'],['Merge steward','Merging what passed']];
+ var STEPS=['Read the plan','Wrote the change','Ran the tests','Opened a pull request'];
+ function card(j,state,i){var d=document.createElement('div');d.className='acard';d.style.setProperty('--c',C[i%C.length]);
+  var meta=state==='run'?'<div class="am run"><i></i><span class="t">0m 12s</span><span>· Read the plan</span></div><div class="bar"><s></s></div>':state==='needs'?'<div class="am"><i style="background:var(--r)"></i><span>Waiting for your yes</span><button class="ok" type="button">Approve</button></div>':'<div class="am"><i style="background:var(--g)"></i><span>Merged · all checks green</span></div>';
+  d.innerHTML='<b>'+j[1]+'</b><p>'+j[0]+'</p>'+meta;return d;}
+ var n=0;function counts(){['needs','run','done'].forEach(function(c,i){document.getElementById(['nN','nR','nD'][i]).textContent=col(c).children.length;});}
+ col('needs').appendChild(card(JOBS[2],'needs',2));col('run').appendChild(card(JOBS[0],'run',0));col('run').appendChild(card(JOBS[1],'run',1));col('done').appendChild(card(JOBS[5],'done',5));n=6;counts();
+ board.addEventListener('click',function(e){var b=e.target.closest('.ok');if(!b)return;var c=b.closest('.acard');var t=c.querySelector('b').textContent,w=c.querySelector('p').textContent;c.remove();col('run').appendChild(card([w,t],'run',3));counts();});
+ function tick(){var runs=[].slice.call(col('run').children);runs.forEach(function(c){var s=(c._s||0)+1;c._s=s;var bar=c.querySelector('.bar s');if(bar)bar.style.setProperty('--w',Math.min(100,s*26)+'%');var st=c.querySelector('.am span:last-child');if(st)st.textContent='· '+STEPS[Math.min(3,s-1)];var t=c.querySelector('.t');if(t)t.textContent=(s)+'m '+(10+s*7%50)+'s';
+  if(s>=5){c.remove();var j=[c.querySelector('p').textContent,c.querySelector('b').textContent];col('done').insertBefore(card(j,'done',n++),col('done').firstChild);while(col('done').children.length>3)col('done').lastChild.remove();
+   var nj=JOBS[n%JOBS.length];col('run').appendChild(card(nj,'run',n++));}});
+  counts();}
+ if(!reduce)setInterval(tick,2200);
+ var seg=document.querySelectorAll('#aboard .seg button');seg.forEach(function(b,i){b.addEventListener('click',function(){seg.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});board.classList.toggle('list',i===1);});});}
+// 5. record figures get a small chart each
+var rec=document.querySelectorAll('.record > div');
+rec.forEach(function(d){var b=d.querySelector('b'),n=+b.dataset.n,v=document.createElement('div');
+ if(n===48||n===117||n===150){v.className='rviz dots';for(var i=0;i<n;i++)v.appendChild(document.createElement('i'));}
+ else if(n===340){v.className='rviz bars';[6,9,14,12,20,26,31,38,44,52,47,41].forEach(function(h){var i=document.createElement('i');i.dataset.h=h;v.appendChild(i);});var sm=document.createElement('small');sm.textContent='per week';v.appendChild(sm);}
+ else{v.className='rviz seg';for(var k=0;k<n;k++)v.appendChild(document.createElement('i'));}
+ d.appendChild(v);});
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var v=e.target.querySelector('.rviz');if(!v)return;var items=[].slice.call(v.children).filter(function(x){return x.tagName==='I';});
+ items.forEach(function(i,k){setTimeout(function(){if(i.dataset.h)i.style.height=(i.dataset.h/52*100)+'%';else i.classList.add('on');},reduce?0:k*(items.length>40?12:60));});io.unobserve(e.target);});},{threshold:.4});
+rec.forEach(function(d){io.observe(d);});
+// 7. copy email with a toast; tilt on work cards; magnetic buttons
+var toast=document.createElement('div');toast.className='toast';toast.setAttribute('role','status');document.body.appendChild(toast);
+function say(t){toast.textContent=t;toast.classList.add('on');clearTimeout(say._t);say._t=setTimeout(function(){toast.classList.remove('on');},1800);}
+var cm=document.getElementById('copymail');if(cm)cm.addEventListener('click',function(){var a='me@temifusika.com';(navigator.clipboard?navigator.clipboard.writeText(a):Promise.reject()).then(function(){say('Email copied');},function(){say(a);});});
+if(!reduce&&matchMedia('(hover:hover)').matches){
+ document.querySelectorAll('.case').forEach(function(c){c.addEventListener('mousemove',function(e){var r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform='perspective(1200px) rotateY('+(x*4)+'deg) rotateX('+(-y*4)+'deg)';});c.addEventListener('mouseleave',function(){c.style.transform='';});});
+ document.querySelectorAll('.mag').forEach(function(m){m.addEventListener('mousemove',function(e){var r=m.getBoundingClientRect();m.style.transform='translate('+((e.clientX-r.left-r.width/2)*.18)+'px,'+((e.clientY-r.top-r.height/2)*.25)+'px)';});m.addEventListener('mouseleave',function(){m.style.transform='';});});}
+})();
 </script>
 </body>
 </html>
