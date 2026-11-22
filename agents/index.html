@@ -360,7 +360,7 @@ body{background:radial-gradient(1200px 600px at 30% -10%,#1d2459 0%,#12152a 60%)
     <div id="rList" class="r-list"></div>
   </aside>
 </main>
-<div class="ao-credit">Office drawn with <a href="https://github.com/yasharya1/agent-office" target="_blank" rel="noopener">Agent Office</a> by Yash Arya (MIT licence). Illustrative: names and work are examples.</div><script>window.TEAM_MODE="public";window.TEAM_SNAP0=null;</script><script>/* Data shim: serves the office engine's /api/state from our GitHub snapshot (private) or an illustrative script (public). */
+<script>window.TEAM_MODE="public";window.TEAM_SNAP0=null;</script><script>/* Data shim: serves the office engine's /api/state from our GitHub snapshot (private) or an illustrative script (public). */
 (() => {
 'use strict';
 const MODE = window.TEAM_MODE;
@@ -605,7 +605,30 @@ for (const [k, [f, n]] of Object.entries(N)) if (T.cast[k]) { T.cast[k].first = 
 T.labels.annex = 'Annex'; T.labels.foreman = 'Primary';
 T.recepNote = 'Holds anything waiting for a person.';
 })();
-</script><script>/* Agent Office engine, MIT License, Copyright (c) 2026 Yash Arya. https://github.com/yasharya1/agent-office */
+</script><script>/* Agent Office engine: https://github.com/yasharya1/agent-office
+
+MIT License
+
+Copyright (c) 2026 Yash Arya
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
 /* Agent Office: every running coding agent takes a desk in a pixel office.
    Vanilla JS, one canvas at an integer scale, a DOM layer for text. Every sprite,
    prop, sign and letter is drawn in code. The cast, signs and quips come from the
