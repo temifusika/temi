@@ -318,6 +318,14 @@ body{background:radial-gradient(1200px 600px at 30% -10%,#1d2459 0%,#12152a 60%)
 .brand-mark{background:linear-gradient(135deg,#2d46f5 0 50%,#C6FF3D 50% 100%)!important}
 .ao-credit{font:11px/1.4 var(--ui);color:var(--muted);padding:8px 16px 14px}
 .ao-credit a{color:#c9d0ee}
+#stageWrap{overflow:auto;cursor:grab;touch-action:pan-x pan-y;overscroll-behavior:contain}
+#stageWrap.dragging{cursor:grabbing;user-select:none}
+#office{image-rendering:pixelated}
+#stage{transition:transform .5s ease}
+#stage.three{transform:perspective(1800px) rotateX(24deg);transform-origin:50% 0}
+.viewbar{display:flex;gap:4px;flex-wrap:wrap}
+.viewbar .pill-btn[aria-pressed="true"]{background:#2d46f5;color:#fff;border-color:#2d46f5}
+@media (prefers-reduced-motion:reduce){#stage{transition:none}}
 @media (max-width:640px){#top{height:auto;min-height:52px;flex-wrap:wrap;row-gap:6px;padding:8px 16px}.hstatus{flex-wrap:wrap}}
 </style>
 <style>#alertBtn{display:none!important}.ao-home{display:block;font:600 12px/1 var(--ui);color:#c9d0ee;padding:10px 16px;background:#0d1022;text-decoration:none}.ao-home:hover{color:#fff}</style></head><body><a class="ao-home" href="/">← temifusika.com</a><div id="errbar" hidden></div>
@@ -3054,5 +3062,60 @@ if (Q.get('debug') === '1') {
 updateChrome();
 if (SCENE) startScene(); else if (FIXTURE) startFixture(); else poll();
 requestAnimationFrame(frame);
+})();
+</script><script>/* View controls: zoom (Fit, 100%, 120%, 140%), a tilted 3D view, and drag or scroll to move around the floor. */
+(() => {
+'use strict';
+const wrap = document.getElementById('stageWrap'), stage = document.getElementById('stage');
+const bar = document.querySelector('#top .hstatus');
+if (!wrap || !stage || !bar) return;
+const KEY = 'ao-view';
+let saved = {};
+try { saved = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch (e) { saved = {}; }
+const box = document.createElement('div');
+box.className = 'viewbar';
+box.setAttribute('role', 'toolbar');
+box.setAttribute('aria-label', 'View');
+const Z = [['fit', 'Fit'], ['1', '100%'], ['1.2', '120%'], ['1.4', '140%']];
+box.innerHTML = Z.map(([v, l]) => `<button type="button" class="pill pill-btn" data-z="${v}" aria-pressed="false">${l}</button>`).join('')
+  + '<button type="button" class="pill pill-btn" id="b3d" aria-pressed="false">3D</button>';
+bar.insertBefore(box, bar.firstChild);
+let zoom = saved.z || (innerWidth >= 900 ? 'fit' : '1');
+let three = !!saved.d;
+function natural() { return stage.scrollWidth / (parseFloat(stage.style.zoom) || 1); }
+function apply() {
+  stage.style.zoom = '1';
+  const w = stage.offsetWidth || 880;
+  const z = zoom === 'fit' ? Math.max(0.3, Math.min(1.6, (wrap.clientWidth - 4) / w)) : parseFloat(zoom);
+  stage.style.zoom = String(z);
+  stage.classList.toggle('three', three);
+  box.querySelectorAll('[data-z]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.z === zoom)));
+  box.querySelector('#b3d').setAttribute('aria-pressed', String(three));
+  try { localStorage.setItem(KEY, JSON.stringify({ z: zoom, d: three })); } catch (e) { /* per-viewer only */ }
+}
+box.addEventListener('click', (e) => {
+  const b = e.target.closest('button'); if (!b) return;
+  if (b.id === 'b3d') three = !three; else zoom = b.dataset.z;
+  apply();
+});
+let rt = 0;
+addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(apply, 120); });
+// drag to move around (a short press still clicks a character)
+let down = null, moved = false;
+wrap.addEventListener('pointerdown', (e) => {
+  if (e.button !== 0 || e.target.closest('button, a, input')) return;
+  down = { x: e.clientX, y: e.clientY, l: wrap.scrollLeft, t: wrap.scrollTop, id: e.pointerId }; moved = false;
+});
+wrap.addEventListener('pointermove', (e) => {
+  if (!down || e.pointerId !== down.id) return;
+  const dx = e.clientX - down.x, dy = e.clientY - down.y;
+  if (!moved && Math.hypot(dx, dy) < 6) return;
+  if (!moved) { moved = true; wrap.classList.add('dragging'); try { wrap.setPointerCapture(e.pointerId); } catch (x) { /* fine */ } }
+  wrap.scrollLeft = down.l - dx; wrap.scrollTop = down.t - dy;
+});
+const end = () => { down = null; setTimeout(() => wrap.classList.remove('dragging'), 0); };
+wrap.addEventListener('pointerup', end); wrap.addEventListener('pointercancel', end);
+wrap.addEventListener('click', (e) => { if (moved) { e.stopPropagation(); e.preventDefault(); moved = false; } }, true);
+setTimeout(apply, 50);
 })();
 </script></body></html>
