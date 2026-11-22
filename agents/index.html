@@ -52,8 +52,11 @@ h1{margin:0;font-family:var(--pix);font-weight:600;font-size:26px;letter-spacing
 .desk .nm{position:absolute;left:50%;top:34px;transform:translateX(-50%);font-family:var(--mono);font-size:9px;font-weight:600;background:var(--panel);border:1px solid var(--ink);padding:0 4px;white-space:nowrap}
 .sofa{position:absolute;width:110px;height:30px;background:#5B7FD1;border:3px solid var(--ink);border-radius:6px 6px 2px 2px;box-shadow:inset 0 -10px 0 #4766B3}
 .plant{position:absolute;width:18px;height:26px}
-.plant::before{content:"";position:absolute;left:3px;top:0;width:12px;height:14px;background:var(--ok);border:2px solid var(--ink)}
-.plant::after{content:"";position:absolute;left:4px;top:14px;width:10px;height:10px;background:#B07B4F;border:2px solid var(--ink)}
+
+.plant{width:30px!important;height:38px!important}.plant::before{content:"";position:absolute;left:3px;top:0;width:24px;height:22px;background:radial-gradient(circle at 30% 60%,#2FBF71 0 6px,transparent 7px),radial-gradient(circle at 70% 55%,#22A45F 0 7px,transparent 8px),radial-gradient(circle at 50% 30%,#3ED17F 0 7px,transparent 8px)}.plant::after{content:"";position:absolute;left:7px;top:20px;width:16px;height:14px;background:#C9773A;border:2px solid var(--ink);border-radius:0 0 4px 4px}
+.cihelp{position:absolute;left:1100px;top:456px;font-family:var(--mono);font-size:11px;font-weight:600;border:2px solid var(--ink);background:#FFE08A;color:var(--ink);padding:2px 8px;border-radius:999px;cursor:pointer;z-index:6}
+.rack{cursor:pointer}.rack:hover{outline:3px solid #FFE08A}
+.rack b{position:absolute;bottom:-20px;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:10px;font-weight:600;color:var(--ink);background:var(--panel);border:1px solid var(--ink);padding:0 4px;white-space:nowrap}
 .rack{position:absolute;width:44px;height:120px;background:#2B3045;border:3px solid var(--ink);display:flex;flex-direction:column;gap:5px;padding:6px 5px;box-sizing:border-box}
 .rack i{height:8px;background:#3A4060;position:relative}
 .rack i::after{content:"";position:absolute;right:3px;top:2px;width:4px;height:4px;background:var(--ok);animation:led 1s steps(2) infinite}
@@ -215,14 +218,14 @@ aside.roster{flex:1 1 100%!important;max-width:none!important;max-height:none!im
       <div class="room zone-sco" style="left:20px;top:452px;width:846px;height:292px"></div>
       <div class="label" style="left:30px;top:458px;color:var(--sco)">SCOPTERRA · ON THE MACBOOK</div>
       <div class="room" style="left:882px;top:452px;width:298px;height:292px;background:rgba(43,48,69,.08)"></div>
-      <div class="label" style="left:892px;top:458px">CI · TEST RUNNERS</div>
+      <div class="label" style="left:892px;top:458px">TEST MACHINES (CI)</div><button type="button" class="cihelp" id="cihelp">What is this?</button>
 
       <div class="screen" style="left:1040px;top:110px;width:128px;height:64px" id="ciScreen">checks: green<br>staging: up</div>
       <div class="sofa" style="left:910px;top:330px"></div><div class="sofa" style="left:1040px;top:330px"></div>
       <div class="sofa" style="left:910px;top:392px"></div><div class="sofa" style="left:1040px;top:392px"></div>
       <div class="coffee" style="left:1146px;top:290px"></div>
       <div class="plant" style="left:312px;top:92px"></div><div class="plant" style="left:838px;top:404px"></div><div class="plant" style="left:30px;top:712px"></div>
-      <div class="rack" style="left:900px;top:500px"></div><div class="rack" style="left:955px;top:500px"></div><div class="rack" style="left:1010px;top:500px"></div><div class="rack" style="left:1065px;top:500px"></div><div class="rack" style="left:1120px;top:500px"></div>
+      <div class="rack" style="left:900px;top:500px"><b>runner 1</b></div><div class="rack" style="left:955px;top:500px"><b>2</b></div><div class="rack" style="left:1010px;top:500px"><b>3</b></div><div class="rack" style="left:1065px;top:500px"><b>4</b></div><div class="rack" style="left:1120px;top:500px"><b>5</b></div>
       <div class="screen" style="left:900px;top:640px;width:264px;height:80px;color:#FFE08A" id="queue"><div>CI QUEUE</div><div class="ticker"><span id="tickTxt">Builders writing code · checks running · finished work merges when every check passes · two companies, one team</span></div><div id="qTxt"></div></div>
     </div></div></div></div>
 
@@ -421,6 +424,11 @@ const ord=[...A].sort((x,y)=>{const r=a=>a.room==='rec'?0:a.state==='paused'?4:a
 render();
 Promise.all(ord.map((a,i)=>arrive(a,i))).then(()=>{ if(!reduce){ setInterval(tick,2600); setInterval(patrol,16000); setTimeout(patrol,2500);} });
 })();
+
+function info(title,html){const pop=document.getElementById('pop');pop.innerHTML='<button class="x" type="button" aria-label="Close">\u00d7</button><h3>'+title+'</h3>'+html;pop.hidden=false;pop.querySelector('.x').addEventListener('click',()=>{pop.hidden=true;});}
+const CIINFO="<p>Test machines in the cloud. Every time a builder pushes code, one of them runs the full set of checks: type checks, style checks, unit tests, database tests and integration tests.</p><p>Nothing is merged or released until every check passes. The merge steward waits on these results before it merges finished work.</p><p class=foot>The queue screen shows jobs waiting for a free machine.</p>";
+document.getElementById('cihelp').addEventListener('click',()=>info('Test machines (CI)',CIINFO));
+document.querySelectorAll('.rack').forEach((r,i)=>{r.setAttribute('role','button');r.tabIndex=0;r.setAttribute('aria-label','Test machine '+(i+1)+': what is this?');r.addEventListener('click',()=>info('Test machine '+(i+1)+' of 5',CIINFO));r.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();info('Test machine '+(i+1)+' of 5',CIINFO);}});});
 </script>
 
 </body>
