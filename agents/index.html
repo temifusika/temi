@@ -414,7 +414,6 @@ const DEFS = [
   ['steward', 'Omnistead', 'subagent', 'explorer', 'steward', null],
   ['watch', 'Omnistead', 'subagent', 'explorer', null, null],
   ['reviewer', 'Omnistead', 'subagent', 'explorer', 'reviewer', null],
-  ['adviser', 'Scopterra', 'session', null, null, null],
   ['app', 'Scopterra', 'session', null, 'app', null],
   ['site', 'Scopterra', 'session', null, 'site', null],
   ['method', 'Scopterra', 'session', null, 'method', null],
@@ -569,7 +568,7 @@ const CAST = {
   // Omnistead docs lanes (the back room)
   ready: { first: 'Docs', name: 'Docs writer', title: 'Docs writer', look: { skin: SK.c, hair: '#4b2e1d', style: 'curlylong', shirt: SAF, top: 'top', mug: COB } },
   content: { first: 'Content', name: 'Content writer', title: 'Content writer', look: { skin: SK.b, hair: '#16141a', style: 'bob', glasses: 'rect', glassC: INK, shirt: STONE, top: 'cardigan', topC: PERI, mug: PERI } },
-  r3: { name: 'Researcher', title: 'Helper', look: { skin: SK.f, hair: '#151010', style: 'short', shirt: '#e3b8a0', tie: COB, mug: SAF } },
+  r3: { first: 'Spare', name: 'Spare desk', title: 'Spare desk', look: { skin: SK.f, hair: '#151010', style: 'short', shirt: '#e3b8a0', tie: COB, mug: SAF } },
   // the assistants (planning room)
   omnchat: { first: 'Planner', name: 'Planner', title: 'Planner', look: { skin: SK.f, hair: '#1a1210', style: 'curlybob', shirt: STONE, top: 'blazer', topC: COB, mug: SAF } },
   reminders: { first: 'Reminders', name: 'Reminders', title: 'Reminders', look: { skin: SK.a, hair: '#9c9ca2', style: 'swept', facial: 'beard', facialC: '#9c9ca2', shirt: '#f2f2ee', top: 'suit', topC: INK, tie: AMB, mug: INK } },
@@ -598,7 +597,7 @@ const QUIPS = { steward: ['Anything green to merge?'], desk: ['Front desk, how c
 const SCOUT_QUIPS = ['How is it going?', 'No half jobs.', 'Best in the market.', 'Show me on staging.', 'What is blocking you?', 'Good work, keep going.', 'Ship it when it is green.'];
 
 const POOLS = {
-  top: ['app', 'adviser', 'site', 'method', 'api', 'reminders'],
+  top: ['app', 'reminders', 'site', 'method', 'api', 'r3'],
   research: ['steward', 'watch', 'reviewer'],
   builder: ['phasea', 'payroll', 'phasep', 'phases', 'q9'],
   reviewer: ['ready', 'content'],
@@ -631,7 +630,7 @@ window.AO_THEME = {
   poolOfType: { explorer: 'research', builder: 'builder', reviewer: 'reviewer', debugger: 'debugger', Plan: 'plan', guide: 'guide' },
   slots: {
     scout: 'temi', recep: 'desk',
-    pairFront: 'app', pairBack: 'adviser', duo: ['site', 'method'], row1: ['api', 'reminders'], row2: ['ready', 'content'],
+    pairFront: 'app', pairBack: 'reminders', duo: ['site', 'method'], row1: ['api', 'r3'], row2: ['ready', 'content'],
     acc: ['steward', 'watch', 'reviewer'], conf: ['omnchat', 'scochat'],
     annexHead: ['q1', 'q11', 'sixc'],
     annexExtras: ['fivec', 'x1', 'x2', 'x3', 'x4', 'x5', 'x6', 'x7'],
